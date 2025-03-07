@@ -61,7 +61,7 @@ def process_format(index, input_row):
     data = {"contents": [{"parts": [{"text": message}]}]}
     max_retries = 5  # Maximum retry attempts
     delay = 1  # Start with 1 second delay
-
+    
     for attempt in range(max_retries):
         try:
             api_key = random.choice(TOKEN_LIST)  # ✅ Randomly choose an API key
@@ -112,7 +112,7 @@ def process_format(index, input_row):
             return  # Exit function on failure
 
 # Function to run processing using ThreadPoolExecutor
-def main(num_threads=3):  # ✅ Reduce threads to avoid hitting rate limits
+def main(num_threads=2):  # ✅ Reduce threads to avoid hitting rate limits
     """Start multiple worker threads for processing"""
     print(f"🚀 Starting processing with {num_threads} threads...")
 
@@ -135,4 +135,4 @@ def main(num_threads=3):  # ✅ Reduce threads to avoid hitting rate limits
 # Execute the script
 if __name__ == "__main__":
     load_data()
-    main(num_threads=1)  # ✅ Reduce threads to avoid rate limits
+    main(num_threads=2)  # ✅ Reduce threads to avoid rate limits
