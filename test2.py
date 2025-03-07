@@ -1,54 +1,54 @@
-
-
 import requests
 import json
 import pandas as pd
-
-import asyncio
-import threading
-from queue import Queue
 import time
-url = "https://generativelanguage.googleapis.com/v1beta/models/gemini-2.0-flash:generateContent?key=AIzaSyB6gsoALkD0gEFba7OXCCSGgRUyO4GeYGs"
-headers = {
-    'Content-Type': 'application/json'
-}
-task_queue = Queue()  # Multi-threaded queue
+import os
+import random
+from concurrent.futures import ThreadPoolExecutor, as_completed
+from queue import Queue
 
+# List of API keys to rotate
+TOKEN_LIST = [
+    # "AIzaSyB6gsoALkD0gEFba7OXCCSGgRUyO4GeYGs",
+    "AIzaSyBL5tmxogE2gX_Ge5NaQGswt-c9m64ugh0",
+    "AIzaSyBMwo8HaGSZK_r7Yf8DAQO6f0IIfKDyFPY",
+    "AIzaSyBDn2M069ar1TV3nQd5Gl_jHDnCtw7Ut4s",
+    "AIzaSyDZz7Xs0iiAVoVZ9_u2HuLsGMrtPe8X9s8",
+    "AIzaSyBAhFSS4sOhXH8_pRm0Shp6kIs_FTPajY0",
+    "AIzaSyAO69ZzDhcKa8JxZiPe9aRi6PIUwfxhqsk",
+    "AIzaSyAhUvz6UVb2cT-p8Dl3An9OegDbrCs9BY0",
+    "AIzaSyDHWMdntqQVq1r-BpGcyXQOY0e93E3NxrQ",
+    "AIzaSyAJilBfiR2V1mXQ1JCaRIVA8oCLvkTCL6M",
+    "AIzaSyAWz1kzRkrPOtwnqu_T-n90iSN1R3nbtxA",
+    "AIzaSyDs1RC8XFWbNn4J_gm4wCn0Abx0iDy9Tr4",
+    "AIzaSyC_G60jv63lXUyIQQpQMbB8sdqLt2quBJA",
+    "AIzaSyAdPQwj4w_mxyj785z33BjHJy-oC0Hr8f8",
+    "AIzaSyBbuFT6eE856dU1FCJMgaiPLasJwBgAFVU",
+    "AIzaSyBluSDtYMdfkIB9yfgRL1v5XeU9Et0uJFw",
+    "AIzaSyCj9QixCfsmEDArEFlsYaLH-gGKWBntqdQ",
+    "AIzaSyCab5BIJn7hQ3gLUIh7Dsy35VAfHXXNXak",
+    "AIzaSyBv_AJLMYrDhCSOcJGh3qiVVWZrpHIPCT8",
+]
 
-def processing_queue():
+HEADERS = {'Content-Type': 'application/json'}
+
+# Global Counters
+success_num = 0
+failure_num = 0
+task_queue = Queue()
+
+# Read and load dataset into queue
+def load_data():
     dataframe = pd.read_csv("main_datasets.csv")
-    
-    batch_size = 1000  # Batch size for insertion
-    batch = []
-    
-    start_time = time.time()  # Start timer
-
     for index, row in dataframe.iterrows():
-        input_row = ','.join(row.astype(str))
-        batch.append(input_row)
+        task_queue.put((index, ','.join(row.astype(str))))  # ✅ Save row index and data
+    print(f"📊 Total Tasks Loaded: {task_queue.qsize()}")
 
-        # Insert in batches
-        if len(batch) >= batch_size:
-            for item in batch:
-                task_queue.put(item)  # Using non-async queue put
-            batch.clear()
+# Function to process API request
+def process_format(index, input_row):
+    global success_num, failure_num  # ✅ Fix: Declare global variables
 
-    # Insert remaining data in queue
-    for item in batch:
-        task_queue.put(item)
-
-    end_time = time.time()  # End timer
-    elapsed_time = end_time - start_time
-
-    return
-
-processing_queue()
-print(task_queue.qsize())
-
-
-class DataProcessing:
-    def process_format(self,input_row):
-        message = f"""
+    message = f"""
             "You are a best medical data assistant with have information. you have all the information on diseases,medical and health. Process the provided raw disease data into a CSV with the following columns:
 
             "id","Associated Disease","Disease Ontology Description","UniProt Description","Protein Count","Direct Association Count","Mondo ID","GARD Rare","Symbol","UniProt","Disease Data Source","JensenLab TextMining zscore","JensenLab Confidence","Expression Atlas Log2 Fold Change","DisGeNET Score","Associated Disease Evidence","Associated Disease Drug Name","Associated Disease P-value","Associated Disease Source","Associated Disease Source ID","Monarch S2O", "diseases_name", "symptoms_1", "symptoms_2", "symptoms_3", "symptoms_4", "symptoms_5", "symptoms_6", "symptoms_7", "symptoms_8", "symptoms_9", "description", "symptoms_description", "causes_description", "causes_1", "causes_2", "causes_3", "causes_4", "causes_5", "treatment_1", "treatment_2", "treatment_3", "prevention_1", "prevention_2", "prevention_3", "risk_factor", "age_of_onset", "genetic_factors", "family_history", "severity_of_disease", "diagnosis_methods", "complications", "epidemiology", "prognosis".
@@ -57,47 +57,82 @@ class DataProcessing:
             it is better if you fill all fields with best value. just only give me csv formatted data.
             Input: {input_row}
             """
-        data = {
-                "contents": [{
-                    "parts": [{"text": message}]
-                }]
-            }
 
-        response = requests.post(url, headers=headers, data=json.dumps(data))
-        data = response.json()['candidates'][0]['content']['parts'][0]['text']
+    data = {"contents": [{"parts": [{"text": message}]}]}
+    max_retries = 5  # Maximum retry attempts
+    delay = 1  # Start with 1 second delay
 
-        # data.replace
-        data = data.replace("```csv", "")
-        data = data.replace("```","")
+    for attempt in range(max_retries):
+        try:
+            api_key = random.choice(TOKEN_LIST)  # ✅ Randomly choose an API key
+            url = f"https://generativelanguage.googleapis.com/v1beta/models/gemini-2.0-flash:generateContent?key={api_key}"
 
-        with open("uncleaned_data",'a',encoding="utf-8", errors="ignore") as file_obj:
-            # print(input_row,"\n")
-            file_obj.write(data+"\n")
+            response = requests.post(url, headers=HEADERS, data=json.dumps(data))
+            
+            # If we get a 429 error, wait and retry with another key
+            if response.status_code == 429:
+                print(f"⚠️ Rate limit hit (attempt {attempt+1}/{max_retries}) with API key: {api_key}. Retrying in {delay} seconds with another key...")
+                time.sleep(delay)
+                delay *= 2  # Exponential backoff (1s -> 2s -> 4s -> 8s)
+                continue  # Retry with a different key
+            
+            response.raise_for_status()  # Raise exception for non-200 status codes
 
+            # Try to extract CSV data
+            csv_data = response.json().get('candidates', [{}])[0].get('content', {}).get('parts', [{}])[0].get('text', None)
 
-    def worker(self):
-        """Worker thread to process queue items"""
-        while not task_queue.empty():
-            item = task_queue.get()
-            self.process_format(item)
-            task_queue.task_done()  # Mark task as done
+            # If CSV data is missing or empty, log error
+            if not csv_data:
+                raise ValueError("Invalid or empty response received from API")
 
+            csv_data = csv_data.replace("```csv", "").replace("```", "").strip()
 
-    def main(self, num_threads=5):
-        """Start multiple worker threads for processing"""
-        print(f"🚀 Starting processing with {num_threads} threads...")
-        threads = []
+            # Batch write to file (buffering for better performance)
+            with open("uncleaned_data.csv", 'a', encoding="utf-8") as file_obj:
+                file_obj.write(csv_data + "\n")
 
-        for _ in range(num_threads):
-            thread = threading.Thread(target=self.worker)
-            thread.start()
-            threads.append(thread)
+            success_num += 1  # ✅ Fix: Now modifies the global variable
+            print(f"[✅ Success: Row {index} (Total: {success_num})] using API key: {api_key}")
+            time.sleep(0.5)  # ✅ Slow down API requests to prevent hitting rate limits
+            return  # Exit the function on success
 
-        for thread in threads:
-            thread.join()
+        except (requests.exceptions.HTTPError, requests.exceptions.RequestException) as http_err:
+            print(f"❌ HTTP Error: {http_err}")
+            if response.status_code == 429:  # Rate limit handling
+                continue  # Retry with a different key
 
-        print("✅ Processing completed!")
+        except Exception as e:
+            failure_num += 1  # ✅ Fix: Now modifies the global variable
+            print(f"[❌ Error: Row {index} (Total: {failure_num})]: {e}")
 
-# Start multi-threaded processing
-obj = DataProcessing()
-obj.main(num_threads=10)  # Adjust number of threads based on system performance
+            # ✅ Save failed data to `errors.csv`
+            with open("errors.csv", 'a', encoding="utf-8") as error_file:
+                error_file.write(f"{index},{input_row}, ERROR: {str(e)}\n")
+
+            return  # Exit function on failure
+
+# Function to run processing using ThreadPoolExecutor
+def main(num_threads=3):  # ✅ Reduce threads to avoid hitting rate limits
+    """Start multiple worker threads for processing"""
+    print(f"🚀 Starting processing with {num_threads} threads...")
+
+    with ThreadPoolExecutor(max_workers=num_threads) as executor:
+        future_to_task = {executor.submit(process_format, index, row): (index, row) for index, row in list(task_queue.queue)}
+
+        for future in as_completed(future_to_task):
+            index, input_row = future_to_task[future]
+            try:
+                future.result()  # Wait for each thread to complete
+            except Exception as e:
+                print(f"❌ Error in thread execution for Row {index}: {e}")
+
+                # ✅ Save failed data to `errors.csv`
+                with open("errors.csv", 'a', encoding="utf-8") as error_file:
+                    error_file.write(f"{index},{input_row}, ERROR: {str(e)}\n")
+
+    print("✅ Processing completed!")
+
+# Execute the script
+if __name__ == "__main__":
+    load_data()
+    main(num_threads=1)  # ✅ Reduce threads to avoid rate limits
