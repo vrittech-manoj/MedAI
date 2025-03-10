@@ -7,6 +7,18 @@ import random
 from concurrent.futures import ThreadPoolExecutor, as_completed
 from queue import Queue
 
+
+def get_last_row_from_file(file_path):
+    try:
+        with open(file_path,'r') as fl_o:
+            rows = fl_o.readlines()
+            last_row = rows[-1].split(',')[0]
+            return int(last_row)
+    except:
+        return None
+
+
+
 proxies_list = [
     {
         "http": "http://shkvfcmd-1:hx546e3x43cl@p.webshare.io:80",
@@ -93,17 +105,26 @@ def load_data():
     print(f"📊 Total Tasks Loaded: {task_queue.qsize()}")
 
 # Function to process API request
-def process_format(index, input_row):
+def process_format(index, input_row,file_path):
     global success_num, failure_num  # ✅ Fix: Declare global variables
      # Load previous dataset to avoid duplicate entries
-    if not os.path.exists("uncleaned_data.csv") or os.stat("uncleaned_data.csv").st_size == 0:
+    if not os.path.exists(file_path) or os.stat(file_path).st_size == 0:
         print("⚠️ Error: The uncleaned_data.csv file is empty. No data to parse.")
+        return
     else:
+        last_rows = get_last_row_from_file(file_path)
+        if last_rows == None:
+            print(f"fix last rows of {file_path}")
+            last_rows = get_last_row_from_file(get_previous_file_from_file_path(file_path))
+            if last_rows == None:
+                print(f"fix last rows of {file_path}")
+                input("pause")
+                return
         try:
             # input("pause")
-            old_storage = pd.read_csv("uncleaned_data.csv", encoding="utf-8", dtype=str)
+            old_storage = pd.read_csv(file_path, encoding="utf-8", dtype=str)
             # print(int(input_row.split(',')[0]),old_storage["sn"].values)
-            if str(input_row.split(',')[0]) in old_storage["sn"].values:
+            if str(input_row.split(',')[0]) in old_storage["sn"].values and str(input_row.split(',')[0])<=last_rows:
                     print(f"[🔄 skipping: Row at {index})] save over hited")
                     return
             else:
@@ -155,7 +176,7 @@ def process_format(index, input_row):
             csv_data = csv_data.replace("```csv", "").replace("```", "").strip()
 
             # Batch write to file (buffering for better performance)
-            with open("uncleaned_data.csv", 'a', encoding="utf-8") as file_obj:
+            with open(file_path, 'a', encoding="utf-8") as file_obj:
                 file_obj.write(csv_data + "\n")
 
             success_num += 1  # ✅ Fix: Now modifies the global variable
@@ -179,12 +200,12 @@ def process_format(index, input_row):
             return  # Exit function on failure
 
 # Function to run processing using ThreadPoolExecutor
-def main(num_threads=1):  # ✅ Reduce threads to avoid hitting rate limits
+def main(num_threads=1,file_path=None):  # ✅ Reduce threads to avoid hitting rate limits
     """Start multiple worker threads for processing"""
     print(f"🚀 Starting processing with {num_threads} threads...")
 
     with ThreadPoolExecutor(max_workers=num_threads) as executor:
-        future_to_task = {executor.submit(process_format, index, row): (index, row) for index, row in list(task_queue.queue)}
+        future_to_task = {executor.submit(process_format, index, row, file_path): (index, row) for index, row in list(task_queue.queue)}
 
         for future in as_completed(future_to_task):
             index, input_row = future_to_task[future]
@@ -199,7 +220,66 @@ def main(num_threads=1):  # ✅ Reduce threads to avoid hitting rate limits
 
     print("✅ Processing completed!")
 
+def get_previous_file_from_file_path(file_path):
+    try:
+        fl = file_path.replace("extracted_data/", "")
+        fl = int(fl.replace(".csv",""))
+        return fl
+    except ValueError:
+            return None
+            pass  # Ignore files that don't follow the naming pattern
+
+
+def get_last_file_number(directory="extracted_data"):
+    """Finds the highest numbered CSV file in the directory and returns the next available file number."""
+    if not os.path.exists(directory):
+        os.makedirs(directory)  # Create the directory if it doesn't exist
+    
+    # Get list of all files in the directory
+    files = [f for f in os.listdir(directory) if f.endswith(".csv")]
+
+    if not files:
+        return 1  # If no CSV files exist, start with 1
+
+    # Extract numbers from filenames and sort
+    file_numbers = []
+    for file in files:
+        try:
+            number = int(file.replace(".csv", ""))
+            file_numbers.append(number)
+        except ValueError:
+            pass  # Ignore files that don't follow the naming pattern
+
+    if not file_numbers:
+        return 1  # Default to 1 if no valid numbered files are found
+
+    return max(file_numbers)  # Return the next available number
+
 # Execute the script
 if __name__ == "__main__":
+    file_number = get_last_file_number() 
+    # 2️⃣ Construct the file path for the new file
+    file_path = f"extracted_data/{file_number}.csv"
+
+   
+    try:
+        # input("pause")
+        old_storage = pd.read_csv(file_path, encoding="utf-8", dtype=str)
+      
+    except pd.errors.EmptyDataError:
+            print("⚠️ Error: No data found in uncleaned_data.csv")
+            file_path = f"extracted_data/{file_number+1}.csv"
+            with open(file_path,"a") as fl_obj:
+                fl_obj.write('"sn","id","Associated Disease","Disease Ontology Description","UniProt Description","Protein Count","Direct Association Count","Mondo ID","GARD Rare","Symbol","UniProt","Disease Data Source","JensenLab TextMining zscore","JensenLab Confidence","Expression Atlas Log2 Fold Change","DisGeNET Score","Associated Disease Evidence","Associated Disease Drug Name","Associated Disease P-value","Associated Disease Source","Associated Disease Source ID","Monarch S2O", "diseases_name", "symptoms_1", "symptoms_2", "symptoms_3", "symptoms_4", "symptoms_5", "symptoms_6", "symptoms_7", "symptoms_8", "symptoms_9", "description", "symptoms_description", "causes_description", "causes_1", "causes_2", "causes_3", "causes_4", "causes_5", "treatment_1", "treatment_2", "treatment_3", "prevention_1", "prevention_2", "prevention_3", "risk_factor", "age_of_onset", "genetic_factors", "family_history", "severity_of_disease", "diagnosis_methods", "complications", "epidemiology", "prognosis"')
+   
+    except pd.errors.ParserError:
+            print("⚠️ Parsing Error: The file may be corrupted.")
+            file_path = f"extracted_data/{file_number+1}.csv"
+            with open(file_path,"a") as fl_obj:
+                fl_obj.write('"sn","id","Associated Disease","Disease Ontology Description","UniProt Description","Protein Count","Direct Association Count","Mondo ID","GARD Rare","Symbol","UniProt","Disease Data Source","JensenLab TextMining zscore","JensenLab Confidence","Expression Atlas Log2 Fold Change","DisGeNET Score","Associated Disease Evidence","Associated Disease Drug Name","Associated Disease P-value","Associated Disease Source","Associated Disease Source ID","Monarch S2O", "diseases_name", "symptoms_1", "symptoms_2", "symptoms_3", "symptoms_4", "symptoms_5", "symptoms_6", "symptoms_7", "symptoms_8", "symptoms_9", "description", "symptoms_description", "causes_description", "causes_1", "causes_2", "causes_3", "causes_4", "causes_5", "treatment_1", "treatment_2", "treatment_3", "prevention_1", "prevention_2", "prevention_3", "risk_factor", "age_of_onset", "genetic_factors", "family_history", "severity_of_disease", "diagnosis_methods", "complications", "epidemiology", "prognosis"')
+   
+    # 3️⃣ Construct File Path
+
     load_data()
-    main(num_threads=1)  # ✅ Reduce threads to avoid rate limits
+    main(num_threads=1,file_path=file_path)  # ✅ Reduce threads to avoid rate limits
+
