@@ -7,6 +7,50 @@ import random
 from concurrent.futures import ThreadPoolExecutor, as_completed
 from queue import Queue
 
+proxies_list = [
+    {
+        "http": "http://shkvfcmd-1:hx546e3x43cl@p.webshare.io:80",
+        "https": "http://shkvfcmd-1:hx546e3x43cl@p.webshare.io:80",
+    },
+    {
+        "http": "http://shkvfcmd-2:hx546e3x43cl@p.webshare.io:80",
+        "https": "http://shkvfcmd-2:hx546e3x43cl@p.webshare.io:80",
+    },
+    {
+        "http": "http://shkvfcmd-3:hx546e3x43cl@p.webshare.io:80",
+        "https": "http://shkvfcmd-3:hx546e3x43cl@p.webshare.io:80",
+    },
+    {
+        "http": "http://shkvfcmd-4:hx546e3x43cl@p.webshare.io:80",
+        "https": "http://shkvfcmd-4:hx546e3x43cl@p.webshare.io:80",
+    },
+    {
+        "http": "http://shkvfcmd-5:hx546e3x43cl@p.webshare.io:80",
+        "https": "http://shkvfcmd-5:hx546e3x43cl@p.webshare.io:80",
+    },
+    {
+        "http": "http://shkvfcmd-6:hx546e3x43cl@p.webshare.io:80",
+        "https": "http://shkvfcmd-6:hx546e3x43cl@p.webshare.io:80",
+    },
+    {
+        "http": "http://shkvfcmd-7:hx546e3x43cl@p.webshare.io:80",
+        "https": "http://shkvfcmd-7:hx546e3x43cl@p.webshare.io:80",
+    },
+    {
+        "http": "http://shkvfcmd-8:hx546e3x43cl@p.webshare.io:80",
+        "https": "http://shkvfcmd-8:hx546e3x43cl@p.webshare.io:80",
+    },
+    {
+        "http": "http://shkvfcmd-9:hx546e3x43cl@p.webshare.io:80",
+        "https": "http://shkvfcmd-9:hx546e3x43cl@p.webshare.io:80",
+    },
+    {
+        "http": "http://shkvfcmd-10:hx546e3x43cl@p.webshare.io:80",
+        "https": "http://shkvfcmd-10:hx546e3x43cl@p.webshare.io:80",
+    }
+]
+
+
 # List of API keys to rotate
 TOKEN_LIST = [
     # "AIzaSyB6gsoALkD0gEFba7OXCCSGgRUyO4GeYGs",
@@ -89,8 +133,8 @@ def process_format(index, input_row):
         try:
             api_key = random.choice(TOKEN_LIST)  # ✅ Randomly choose an API key
             url = f"https://generativelanguage.googleapis.com/v1beta/models/gemini-2.0-flash:generateContent?key={api_key}"
-
-            response = requests.post(url, headers=HEADERS, data=json.dumps(data))
+            proxy = random.choice(proxies_list)  
+            response = requests.post(url, headers=HEADERS, data=json.dumps(data),proxies=proxy)
             
             # If we get a 429 error, wait and retry with another key
             if response.status_code == 429:
