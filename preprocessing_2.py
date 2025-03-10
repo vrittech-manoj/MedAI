@@ -1,6 +1,9 @@
 import pandas as pd
 
-df = pd.read_csv("dataset.csv")
+df = pd.read_csv("main_datasets.csv")
+df.to_csv("second_main_datasets.csv", index=True)
+
+
 # print(df)
 
 # print(df.describe())

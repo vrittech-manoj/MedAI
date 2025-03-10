@@ -39,7 +39,7 @@ task_queue = Queue()
 
 # Read and load dataset into queue
 def load_data():
-    dataframe = pd.read_csv("main_datasets.csv")
+    dataframe = pd.read_csv("second_main_datasets.csv")
     for index, row in dataframe.iterrows():
         task_queue.put((index, ','.join(row.astype(str))))  # ✅ Save row index and data
     print(f"📊 Total Tasks Loaded: {task_queue.qsize()}")
@@ -47,21 +47,40 @@ def load_data():
 # Function to process API request
 def process_format(index, input_row):
     global success_num, failure_num  # ✅ Fix: Declare global variables
+     # Load previous dataset to avoid duplicate entries
+    if not os.path.exists("uncleaned_data.csv") or os.stat("uncleaned_data.csv").st_size == 0:
+        print("⚠️ Error: The uncleaned_data.csv file is empty. No data to parse.")
+    else:
+        try:
+            # input("pause")
+            old_storage = pd.read_csv("uncleaned_data.csv", encoding="utf-8", dtype=str)
+            # print(int(input_row.split(',')[0]),old_storage["sn"].values)
+            if str(input_row.split(',')[0]) in old_storage["sn"].values:
+                    print(f"[🔄 skipping: Row at {index})] save over hited")
+                    return
+            else:
+                pass
+      
+        except pd.errors.EmptyDataError:
+            print("⚠️ Error: No data found in uncleaned_data.csv")
+        except pd.errors.ParserError:
+            print("⚠️ Parsing Error: The file may be corrupted.")
+    
 
     message = f"""
             "You are a best medical data assistant with have information. you have all the information on diseases,medical and health. Process the provided raw disease data into a CSV with the following columns:
 
-            "id","Associated Disease","Disease Ontology Description","UniProt Description","Protein Count","Direct Association Count","Mondo ID","GARD Rare","Symbol","UniProt","Disease Data Source","JensenLab TextMining zscore","JensenLab Confidence","Expression Atlas Log2 Fold Change","DisGeNET Score","Associated Disease Evidence","Associated Disease Drug Name","Associated Disease P-value","Associated Disease Source","Associated Disease Source ID","Monarch S2O", "diseases_name", "symptoms_1", "symptoms_2", "symptoms_3", "symptoms_4", "symptoms_5", "symptoms_6", "symptoms_7", "symptoms_8", "symptoms_9", "description", "symptoms_description", "causes_description", "causes_1", "causes_2", "causes_3", "causes_4", "causes_5", "treatment_1", "treatment_2", "treatment_3", "prevention_1", "prevention_2", "prevention_3", "risk_factor", "age_of_onset", "genetic_factors", "family_history", "severity_of_disease", "diagnosis_methods", "complications", "epidemiology", "prognosis".
+            "sn","id","Associated Disease","Disease Ontology Description","UniProt Description","Protein Count","Direct Association Count","Mondo ID","GARD Rare","Symbol","UniProt","Disease Data Source","JensenLab TextMining zscore","JensenLab Confidence","Expression Atlas Log2 Fold Change","DisGeNET Score","Associated Disease Evidence","Associated Disease Drug Name","Associated Disease P-value","Associated Disease Source","Associated Disease Source ID","Monarch S2O", "diseases_name", "symptoms_1", "symptoms_2", "symptoms_3", "symptoms_4", "symptoms_5", "symptoms_6", "symptoms_7", "symptoms_8", "symptoms_9", "description", "symptoms_description", "causes_description", "causes_1", "causes_2", "causes_3", "causes_4", "causes_5", "treatment_1", "treatment_2", "treatment_3", "prevention_1", "prevention_2", "prevention_3", "risk_factor", "age_of_onset", "genetic_factors", "family_history", "severity_of_disease", "diagnosis_methods", "complications", "epidemiology", "prognosis".
 
-            For missing or unknown data, use NAN. Ensure each disease entry is processed as a row, with each field separated by commas. The CSV should contain no headers. If any data is not available, fill it with NAN.
-            it is better if you fill all fields with best value. just only give me csv formatted data.
+            For missing or unknown data, use NAN. The CSV should contain no headers. If any data is not available, fill it with NAN ,all value should be in double quotes "value" with commas seperated. and use @ in case of commas with in value. 
+            it is better if you fill all fields with best describe , i will very happy if no any value have NAN . just only give me csv formatted data so that pandas can easly process.please only give me output as csv format as given rule, and panda can process it.
             Input: {input_row}
             """
 
     data = {"contents": [{"parts": [{"text": message}]}]}
     max_retries = 5  # Maximum retry attempts
     delay = 1  # Start with 1 second delay
-    
+    # input("go for next round yes no? #>>>")
     for attempt in range(max_retries):
         try:
             api_key = random.choice(TOKEN_LIST)  # ✅ Randomly choose an API key
@@ -135,4 +154,4 @@ def main(num_threads=1):  # ✅ Reduce threads to avoid hitting rate limits
 # Execute the script
 if __name__ == "__main__":
     load_data()
-    main(num_threads=1)  # ✅ Reduce threads to avoid rate limits
+    main(num_threads=2)  # ✅ Reduce threads to avoid rate limits
