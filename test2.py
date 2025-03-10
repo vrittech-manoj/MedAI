@@ -12,8 +12,11 @@ def get_last_row_from_file(file_path):
     try:
         with open(file_path,'r') as fl_o:
             rows = fl_o.readlines()
-            last_row = rows[-1].split(',')[0]
-            return int(last_row)
+            my_row = rows[-1]
+            my_row = my_row.split(",")
+            my_row = my_row.replace('"',"")
+            print(int(my_row[0]))
+            return int(my_row[0])
     except:
         return None
 
@@ -258,6 +261,7 @@ def get_last_file_number(directory="extracted_data"):
 # Execute the script
 if __name__ == "__main__":
     file_number = get_last_file_number() 
+    print(file_number,"file_number")
     # 2️⃣ Construct the file path for the new file
     file_path = f"extracted_data/{file_number}.csv"
 
