@@ -28,6 +28,10 @@ TOKEN_LIST = [
     "AIzaSyCj9QixCfsmEDArEFlsYaLH-gGKWBntqdQ",
     "AIzaSyCab5BIJn7hQ3gLUIh7Dsy35VAfHXXNXak",
     "AIzaSyBv_AJLMYrDhCSOcJGh3qiVVWZrpHIPCT8",
+    "AIzaSyDhla6uI25CLXEjktl_SB_w64tJ7ukNpss",
+    "AIzaSyA74tcCBD459w6BnldQOqtPBpuqpscpl8Q",
+    "AIzaSyDJ-CznypzniZE5flaSQg3e-1tPcNeW6Ro",
+    "AIzaSyDsVPLzIe8avDvfGhm21HiXPr2ohinuwqI",
 ]
 
 HEADERS = {'Content-Type': 'application/json'}
@@ -78,7 +82,7 @@ def process_format(index, input_row):
             """
 
     data = {"contents": [{"parts": [{"text": message}]}]}
-    max_retries = 5  # Maximum retry attempts
+    max_retries = 10  # Maximum retry attempts
     delay = 1  # Start with 1 second delay
     # input("go for next round yes no? #>>>")
     for attempt in range(max_retries):
@@ -92,7 +96,7 @@ def process_format(index, input_row):
             if response.status_code == 429:
                 print(f"⚠️ Rate limit hit (attempt {attempt+1}/{max_retries}) with API key: {api_key}. Retrying in {delay} seconds with another key...")
                 time.sleep(delay)
-                delay *= 2  # Exponential backoff (1s -> 2s -> 4s -> 8s)
+                delay *= 3  # Exponential backoff (1s -> 2s -> 4s -> 8s)
                 continue  # Retry with a different key
             
             response.raise_for_status()  # Raise exception for non-200 status codes
@@ -154,4 +158,4 @@ def main(num_threads=1):  # ✅ Reduce threads to avoid hitting rate limits
 # Execute the script
 if __name__ == "__main__":
     load_data()
-    main(num_threads=2)  # ✅ Reduce threads to avoid rate limits
+    main(num_threads=1)  # ✅ Reduce threads to avoid rate limits
