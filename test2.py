@@ -14,11 +14,14 @@ def get_last_row_from_file(file_path):
             rows = fl_o.readlines()
             my_row = rows[-1]
             my_row = my_row.split(",")
+            my_row = my_row[0]
             my_row = my_row.replace('"',"")
-            print(int(my_row[0]))
-            return int(my_row[0])
+            if my_row == "sn":
+                return None
+            return int(my_row)
     except:
         return None
+
 
 
 
@@ -116,23 +119,24 @@ def process_format(index, input_row,file_path):
         return
     else:
         last_rows = get_last_row_from_file(file_path)
+        # input("pause")
         if last_rows == None:
-            print(f"fix last rows of {file_path}")
+            # print(f"fix last rows of {file_path}")
             last_rows = get_last_row_from_file(get_previous_file_from_file_path(file_path))
             if last_rows == None:
-                print(f"fix last rows of {file_path}")
-                input("pause")
+                # print(f"fix last rows of {file_path}")
+                # input("pause")
                 return
         try:
             # input("pause")
-            old_storage = pd.read_csv(file_path, encoding="utf-8", dtype=str)
-            # print(int(input_row.split(',')[0]),old_storage["sn"].values)
-            if str(input_row.split(',')[0]) in old_storage["sn"].values and str(input_row.split(',')[0])<=last_rows:
+            # old_storage = pd.read_csv(file_path, encoding="utf-8", dtype=str)
+            # print(int(input_row.split(',')[0]),last_rows)
+            # a = input("pause.")
+            if int(input_row.split(',')[0])<=last_rows:
                     print(f"[🔄 skipping: Row at {index})] save over hited")
                     return
             else:
                 pass
-      
         except pd.errors.EmptyDataError:
             print("⚠️ Error: No data found in uncleaned_data.csv")
         except pd.errors.ParserError:
@@ -206,7 +210,9 @@ def process_format(index, input_row,file_path):
 def main(num_threads=1,file_path=None):  # ✅ Reduce threads to avoid hitting rate limits
     """Start multiple worker threads for processing"""
     print(f"🚀 Starting processing with {num_threads} threads...")
-
+    # for index, row in list(task_queue.queue):
+    #     process_format(index, row, file_path)
+    #     input("pause")
     with ThreadPoolExecutor(max_workers=num_threads) as executor:
         future_to_task = {executor.submit(process_format, index, row, file_path): (index, row) for index, row in list(task_queue.queue)}
 
@@ -224,14 +230,14 @@ def main(num_threads=1,file_path=None):  # ✅ Reduce threads to avoid hitting r
     print("✅ Processing completed!")
 
 def get_previous_file_from_file_path(file_path):
-    try:
-        fl = file_path.replace("extracted_data/", "")
-        fl = int(fl.replace(".csv",""))
-        return fl
-    except ValueError:
+        try:
+            fl = file_path.replace("extracted_data/", "")
+            fl = int(fl.replace(".csv",""))
+            # print("previous file name:",fl)
+            return f"extracted_data/{fl-1}.csv"
+        except:
             return None
-            pass  # Ignore files that don't follow the naming pattern
-
+    
 
 def get_last_file_number(directory="extracted_data"):
     """Finds the highest numbered CSV file in the directory and returns the next available file number."""
@@ -261,7 +267,7 @@ def get_last_file_number(directory="extracted_data"):
 # Execute the script
 if __name__ == "__main__":
     file_number = get_last_file_number() 
-    print(file_number,"file_number")
+    # print(file_number,"file_number")
     # 2️⃣ Construct the file path for the new file
     file_path = f"extracted_data/{file_number}.csv"
 
