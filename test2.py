@@ -162,7 +162,7 @@ def process_format(index, input_row,file_path):
             api_key = random.choice(TOKEN_LIST)  # ✅ Randomly choose an API key
             url = f"https://generativelanguage.googleapis.com/v1beta/models/gemini-2.0-flash:generateContent?key={api_key}"
             proxy = random.choice(proxies_list)  
-            response = requests.post(url, headers=HEADERS, data=json.dumps(data),proxies=proxy)
+            response = requests.post(url, headers=HEADERS, data=json.dumps(data))
             
             # If we get a 429 error, wait and retry with another key
             if response.status_code == 429:
