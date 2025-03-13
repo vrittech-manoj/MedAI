@@ -12,15 +12,22 @@ header = ["sn","id","Associated Disease","Disease Ontology Description","UniProt
 
     
 def get_list(row):
-    my_row = row.replace('","',"md5")
+    my_row = row.replace('",',"md5")
+    my_row = my_row.replace('", ',"md5")
+    my_row = my_row.replace('" ,"',"md5")
     my_row = my_row.replace('"','')
-    print(my_row)
-    input("")
     my_row = my_row.replace(',','@')
     my_row = my_row.replace("md5",",")
     my_row = my_row.split(",")
     # print(my_row)
     return my_row
+
+# def get_list(row):
+#     my_row = row.replace('"',"md59")
+#     my_row = my_row.replace('md59,','md59')
+#     my_row = my_row.replace(',md59','md59')
+#     my_row = my_row.replace('','md59')
+#     return my_row
 
 total_good = 0
 total_bad = 0
@@ -31,7 +38,7 @@ total_fifty_six_data = 0
 bad_data_file_obj = open("errors/bad_data.csv","a")
 one_error_data_file_obj = open("errors/one_error_data.csv","a")
 
-for num in [1,2,3,4,5,6,7]:
+for num in [1,2,3,4,5,6,7,8]:
     file_path = "extracted_data/"+f"{num}"+".csv"
     with open(file_path,"r") as file_obj:
         rows = file_obj.readlines()
