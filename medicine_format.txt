@@ -1,0 +1,1 @@
+id , medicine_name , diseases , doses , side_effect_1 , side_effect_2 , side_effect_3 , side_effect_4, side_effect_5 , disease_1 , disease_2 , disease_3 , disease_4 , disease_4 , disease_5 , composition_1 , composition_2 , composition_3,composition_4 , composition_5 ,  alternative_medicine_name_1 , alternative_medicine_name_2,alternative_medicine_name_3,type,route
