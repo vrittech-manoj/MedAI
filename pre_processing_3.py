@@ -37,6 +37,7 @@ total_fifty_six_data = 0
 total_fifty_seven_data = 0
 
 # bad_data_file_obj = open("errors/bad_data.csv","a")
+good_file_object = open("extracted_data/good.csv","w",encoding="utf-8")
 # one_error_data_file_obj = open("errors/one_error_data.csv","a")
 
 for num in [1,2,3,4,5,6,7,8,9,10,11,12,13,14]:
@@ -51,8 +52,9 @@ for num in [1,2,3,4,5,6,7,8,9,10,11,12,13,14]:
     fifty_seven_data = 0
     for row in rows:
         my_row = get_list(row)
-        if len(my_row) == len(header):
+        if len(my_row) == len(header) and  my_row[0] != "sn" and my_row[0] != "1":
             good_data +=1
+            good_file_object.write(','.join(my_row))
             # print(f"[✅ Success: Row {my_row[0]} , length:{len(my_row)}")
         else:
             
