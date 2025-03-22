@@ -36,12 +36,12 @@ total_one_added_error = 0
 total_fifty_six_data = 0
 total_fifty_seven_data = 0
 
-bad_data_file_obj = open("errors/bad_data.csv","a")
-one_error_data_file_obj = open("errors/one_error_data.csv","a")
+# bad_data_file_obj = open("errors/bad_data.csv","a")
+# one_error_data_file_obj = open("errors/one_error_data.csv","a")
 
-for num in [1,2,3,4,5,6,7,8,9,10]:
+for num in [1,2,3,4,5,6,7,8,9,10,11,12,13,14]:
     file_path = "extracted_data/"+f"{num}"+".csv"
-    with open(file_path,"r") as file_obj:
+    with open(file_path,"r", encoding="utf-8") as file_obj:
         rows = file_obj.readlines()
     # print(header)
     good_data = 0
@@ -64,7 +64,7 @@ for num in [1,2,3,4,5,6,7,8,9,10]:
             elif len(my_row) == 57:
                 fifty_seven_data = fifty_seven_data + 1
             else:
-                bad_data_file_obj.write(','.join(my_row))
+                # bad_data_file_obj.write(','.join(my_row))
                 bad_data +=1
                 # print(f"[x bad: Row {my_row[0]},{my_row[1]}, length {len(my_row)}")
     total_good = total_good + good_data
