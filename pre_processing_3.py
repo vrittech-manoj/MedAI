@@ -60,7 +60,8 @@ for num in [1,2,3,4,5,6,7,8,9,10,11,12,13,14,15,16]:
             
             if my_row[0] == "1":
                 one_added_error = one_added_error + 1
-                one_error_data_file_obj.write(','.join(my_row))
+                one_error_data_file_obj.write(','.join(my_row[1:]))
+                # rows.remove(row)
                 # print(f"[one added error : Row {my_row[0]},{my_row[1]}, length {len(my_row)}")
             elif len(my_row) == 56:
                 fifty_six_data = fifty_six_data + 1
