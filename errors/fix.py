@@ -28,7 +28,7 @@ for item in rows:
     else:
         print("No exact match found.")
     
-    print(my_row, diseases_id)
+    print(my_row, len(my_row))
    
     # print(diseases_id)
     if len(my_row) == 55:
