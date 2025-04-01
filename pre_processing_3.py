@@ -40,7 +40,7 @@ total_fifty_seven_data = 0
 good_file_object = open("extracted_data/good.csv","w",encoding="utf-8")
 one_error_data_file_obj = open("errors/one_error_data.csv","w",encoding="utf-8")
 
-for num in [1,2,3,4,5,6,7,8,9,10,11,12,13,14,15,16]:
+for num in [1,2,3,4,5,6,7,8,9,10,11,12,13,14,15,16,17,18,19,20,21]:
     file_path = "extracted_data/"+f"{num}"+".csv"
     with open(file_path,"r", encoding="utf-8") as file_obj:
         rows = file_obj.readlines()

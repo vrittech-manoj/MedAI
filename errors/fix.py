@@ -19,7 +19,7 @@ for item in rows:
     my_row = item.split(",")
     # for index,item in enumerate(my_row):
     #     print(index,item)
-    # print(len(my_row))
+    print(len(my_row))
     result = df[df['Associated Disease'] == my_row[1]]
     if not result.empty:
         diseases_id = result.iloc[0]['id']
@@ -27,8 +27,8 @@ for item in rows:
         print(diseases_id)
     else:
         print("No exact match found.")
-    
-    print(my_row, len(my_row))
+    last_occurance_diseases_name = len(my_row) - 1 - my_row[::-1].index(my_row[2])
+    print(my_row, len(my_row),my_row[2],last_occurance_diseases_name)
    
     # print(diseases_id)
     if len(my_row) == 55:
