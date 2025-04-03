@@ -8,10 +8,11 @@ df = pd.read_csv("main_datasets.csv")
 
 # print(df.describe())
 all_diseases = df["Associated Disease"].unique()
-input("pause")
-if "11-Beta-hydroxylase deficiency" in all_diseases:
-    print("match .")
 print(len(all_diseases))
+input("pause")
+# if "11-Beta-hydroxylase deficiency" in all_diseases:
+#     print("match .")
+# print(len(all_diseases))
 # print(df['Disease'].unique())
 # Filter rows where Disease is 'Fungal infection'
 # fungal_infection_rows = df[df["Disease"] == "GERD"].drop_duplicates()

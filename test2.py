@@ -18,7 +18,7 @@ def get_last_row_from_file(file_path):
             my_row = my_row.split(",")
             my_row = my_row[0]
             my_row = my_row.replace('"',"")
-            if my_row == "sn":
+            if my_row == "id":
                 return None
             return int(my_row)
     except:
@@ -107,7 +107,7 @@ task_queue = Queue()
 
 # Read and load dataset into queue
 def load_data():
-    dataframe = pd.read_csv("second_main_datasets.csv")
+    dataframe = pd.read_csv("pure_datas.csv")
     for index, row in dataframe.iterrows():
         task_queue.put((index, ','.join(row.astype(str))))  # ✅ Save row index and data
     print(f"📊 Total Tasks Loaded: {task_queue.qsize()}")
@@ -149,11 +149,12 @@ def process_format(index, input_row,file_path):
     message = f"""
             "You are a best medical data assistant with have information. you have all the information on diseases,medical and health. Process the provided raw disease data into a CSV with the following columns:
 
-            "sn","id","Associated Disease","Disease Ontology Description","UniProt Description","Protein Count","Direct Association Count","Mondo ID","GARD Rare","Symbol","UniProt","Disease Data Source","JensenLab TextMining zscore","JensenLab Confidence","Expression Atlas Log2 Fold Change","DisGeNET Score","Associated Disease Evidence","Associated Disease Drug Name","Associated Disease P-value","Associated Disease Source","Associated Disease Source ID","Monarch S2O", "diseases_name", "symptoms_1", "symptoms_2", "symptoms_3", "symptoms_4", "symptoms_5", "symptoms_6", "symptoms_7", "symptoms_8", "symptoms_9", "description", "symptoms_description", "causes_description", "causes_1", "causes_2", "causes_3", "causes_4", "causes_5", "treatment_1", "treatment_2", "treatment_3", "prevention_1", "prevention_2", "prevention_3", "risk_factor", "age_of_onset", "genetic_factors", "family_history", "severity_of_disease", "diagnosis_methods", "complications", "epidemiology", "prognosis".
+            "id","Associated Disease","Disease Ontology Description","UniProt Description","Protein Count","Direct Association Count","Mondo ID","GARD Rare", "diseases_name", "symptoms_1", "symptoms_2", "symptoms_3", "symptoms_4", "symptoms_5", "symptoms_6", "symptoms_7", "symptoms_8", "symptoms_9", "description", "symptoms_description", "causes_description", "causes_1", "causes_2", "causes_3", "causes_4", "causes_5", "treatment_1", "treatment_2", "treatment_3", "prevention_1", "prevention_2", "prevention_3", "risk_factor", "age_of_onset", "genetic_factors", "family_history", "severity_of_disease", "diagnosis_methods", "complications", "epidemiology", "prognosis".
 
             For missing or unknown data, use NAN. The CSV should contain no headers. If any data is not available, fill it with NAN ,all value should be in double quotes "value" with commas seperated. and use @ in case of commas with in value. 
             it is better if you fill all fields with best describe , i will very happy if no any value have NAN . just only give me csv formatted data so that pandas can easly process.please only give me output as csv format as given rule, and panda can process it.
-            Input: {input_row}
+            columns : "id","Associated Disease","Disease Ontology Description","UniProt Description","Protein Count","Direct Association Count","Mondo ID","GARD Rare"
+            Input value : {input_row}
             """
 
     data = {"contents": [{"parts": [{"text": message}]}]}
@@ -234,15 +235,15 @@ def main(num_threads=1,file_path=None):  # ✅ Reduce threads to avoid hitting r
 
 def get_previous_file_from_file_path(file_path):
         try:
-            fl = file_path.replace("extracted_data/", "")
+            fl = file_path.replace("good_data/", "")
             fl = int(fl.replace(".csv",""))
             # print("previous file name:",fl)
-            return f"extracted_data/{fl-1}.csv"
+            return f"good_data/{fl-1}.csv"
         except:
             return None
     
 
-def get_last_file_number(directory="extracted_data"):
+def get_last_file_number(directory="good_data"):
     """Finds the highest numbered CSV file in the directory and returns the next available file number."""
     if not os.path.exists(directory):
         os.makedirs(directory)  # Create the directory if it doesn't exist
@@ -272,7 +273,7 @@ if __name__ == "__main__":
     file_number = get_last_file_number() 
     # print(file_number,"file_number")
     # 2️⃣ Construct the file path for the new file
-    file_path = f"extracted_data/{file_number}.csv"
+    file_path = f"good_data/{file_number}.csv"
 
    
     try:
@@ -281,15 +282,15 @@ if __name__ == "__main__":
       
     except pd.errors.EmptyDataError:
             print("⚠️ Error: No data found in uncleaned_data.csv")
-            file_path = f"extracted_data/{file_number+1}.csv"
+            file_path = f"good_data/{file_number+1}.csv"
             with open(file_path,"a") as fl_obj:
-                fl_obj.write('"sn","id","Associated Disease","Disease Ontology Description","UniProt Description","Protein Count","Direct Association Count","Mondo ID","GARD Rare","Symbol","UniProt","Disease Data Source","JensenLab TextMining zscore","JensenLab Confidence","Expression Atlas Log2 Fold Change","DisGeNET Score","Associated Disease Evidence","Associated Disease Drug Name","Associated Disease P-value","Associated Disease Source","Associated Disease Source ID","Monarch S2O", "diseases_name", "symptoms_1", "symptoms_2", "symptoms_3", "symptoms_4", "symptoms_5", "symptoms_6", "symptoms_7", "symptoms_8", "symptoms_9", "description", "symptoms_description", "causes_description", "causes_1", "causes_2", "causes_3", "causes_4", "causes_5", "treatment_1", "treatment_2", "treatment_3", "prevention_1", "prevention_2", "prevention_3", "risk_factor", "age_of_onset", "genetic_factors", "family_history", "severity_of_disease", "diagnosis_methods", "complications", "epidemiology", "prognosis"')
+                fl_obj.write('"id","Associated Disease","Disease Ontology Description","UniProt Description","Protein Count","Direct Association Count","Mondo ID","GARD Rare", "diseases_name", "symptoms_1", "symptoms_2", "symptoms_3", "symptoms_4", "symptoms_5", "symptoms_6", "symptoms_7", "symptoms_8", "symptoms_9", "description", "symptoms_description", "causes_description", "causes_1", "causes_2", "causes_3", "causes_4", "causes_5", "treatment_1", "treatment_2", "treatment_3", "prevention_1", "prevention_2", "prevention_3", "risk_factor", "age_of_onset", "genetic_factors", "family_history", "severity_of_disease", "diagnosis_methods", "complications", "epidemiology", "prognosis"')
    
     except pd.errors.ParserError:
             print("⚠️ Parsing Error: The file may be corrupted.")
-            file_path = f"extracted_data/{file_number+1}.csv"
+            file_path = f"good_data/{file_number+1}.csv"
             with open(file_path,"a") as fl_obj:
-                fl_obj.write('"sn","id","Associated Disease","Disease Ontology Description","UniProt Description","Protein Count","Direct Association Count","Mondo ID","GARD Rare","Symbol","UniProt","Disease Data Source","JensenLab TextMining zscore","JensenLab Confidence","Expression Atlas Log2 Fold Change","DisGeNET Score","Associated Disease Evidence","Associated Disease Drug Name","Associated Disease P-value","Associated Disease Source","Associated Disease Source ID","Monarch S2O", "diseases_name", "symptoms_1", "symptoms_2", "symptoms_3", "symptoms_4", "symptoms_5", "symptoms_6", "symptoms_7", "symptoms_8", "symptoms_9", "description", "symptoms_description", "causes_description", "causes_1", "causes_2", "causes_3", "causes_4", "causes_5", "treatment_1", "treatment_2", "treatment_3", "prevention_1", "prevention_2", "prevention_3", "risk_factor", "age_of_onset", "genetic_factors", "family_history", "severity_of_disease", "diagnosis_methods", "complications", "epidemiology", "prognosis"')
+                fl_obj.write('"id","Associated Disease","Disease Ontology Description","UniProt Description","Protein Count","Direct Association Count","Mondo ID","GARD Rare", "diseases_name", "symptoms_1", "symptoms_2", "symptoms_3", "symptoms_4", "symptoms_5", "symptoms_6", "symptoms_7", "symptoms_8", "symptoms_9", "description", "symptoms_description", "causes_description", "causes_1", "causes_2", "causes_3", "causes_4", "causes_5", "treatment_1", "treatment_2", "treatment_3", "prevention_1", "prevention_2", "prevention_3", "risk_factor", "age_of_onset", "genetic_factors", "family_history", "severity_of_disease", "diagnosis_methods", "complications", "epidemiology", "prognosis"')
    
     # 3️⃣ Construct File Path
 
