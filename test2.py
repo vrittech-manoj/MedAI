@@ -6,8 +6,22 @@ import os
 import random
 from concurrent.futures import ThreadPoolExecutor, as_completed
 from queue import Queue
+import numbers
 
 my_last_row = int(input("Enter last row#>>>"))
+
+good_data_file = "good_data/good.csv"
+
+with open(good_data_file,'r',encoding="utf-8") as good_data_obj:
+    good_data_obj_data = good_data_obj.readlines()
+
+# ids = [itemm.split(',')[0] for itemm in good_data_obj_data if itemm is number ]
+good_ids = [int(itemm.split(',')[0]) for itemm in good_data_obj_data if itemm.split(',')[0].isdigit()]
+
+print(len(good_data_obj_data))
+# print(ids)
+
+input("pause")
 
 
 def get_last_row_from_file(file_path):
@@ -109,7 +123,10 @@ task_queue = Queue()
 def load_data():
     dataframe = pd.read_csv("pure_datas.csv")
     for index, row in dataframe.iterrows():
-        task_queue.put((index, ','.join(row.astype(str))))  # ✅ Save row index and data
+        if int(row['id']) in good_ids:
+           pass
+        else:
+            task_queue.put((index, ','.join(row.astype(str))))  # ✅ Save row index and data
     print(f"📊 Total Tasks Loaded: {task_queue.qsize()}")
 
 # Function to process API request
@@ -295,5 +312,6 @@ if __name__ == "__main__":
     # 3️⃣ Construct File Path
 
     load_data()
+    # input("terminate")
     main(num_threads=1,file_path=file_path)  # ✅ Reduce threads to avoid rate limits
 
