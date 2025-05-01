@@ -1,0 +1,39 @@
+User: not logged in
+3/4/2025 6:58:08 PM
+TCRD Version: 6.13.5
+Pharos Version: 3.19.1
+URL: https://pharos.nih.gov/diseases
+
+Selected Fields for Download:
+  Associated Disease - Diseases found to be associated with targets in the list, based on a documented indication in data from any source.
+  Disease Ontology Description - A description of the disease from Disease Ontology
+  UniProt Description - A description of the disease from UniProt
+  Protein Count - Count of proteins associated with the disease, or child diseases
+  Direct Association Count - Count of proteins documented to be directly associated with the disease, not a child disease
+  Mondo ID - Mondo Identifier
+  GARD Rare - Annotation from GARD as to whether the disease meets the criteria to be considered a rare disease.
+
+
+
+How to cite Pharos:
+  Kelleher, K., Sheils, T. et al, "Pharos 2023: an integrated resource for the understudied human proteome", Nucl. Acids Res., 2023.
+  DOI: https://doi.org/10.1093/nar/gkac1033
+
+Data accessed from Pharos and TCRD is publicly available from the primary data sources listed on https://pharos.nih.gov/about. Please respect their individual licenses regarding proper use, redistribution, and citations.
+
+SQL Query:
+SELECT
+  ncats_disease.id AS `id`,
+  ncats_disease.name AS `Associated Disease`,
+  ncats_disease.do_description AS `Disease Ontology Description`,
+  ncats_disease.uniprot_description AS `UniProt Description`,
+  ncats_disease.target_count AS `Protein Count`,
+  ncats_disease.direct_target_count AS `Direct Association Count`,
+  ncats_disease.mondoid AS `Mondo ID`,
+  ncats_disease.gard_rare AS `GARD Rare`
+FROM
+  `ncats_disease`
+ORDER BY
+  `id` ASC
+LIMIT
+  250000
