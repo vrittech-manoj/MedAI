@@ -38,7 +38,7 @@ total_fourty_three = 0
 good_file_object = open("good_data/good.csv","w",encoding="utf-8")
 one_error_data_file_obj = open("errors/one_error_data.csv","w",encoding="utf-8")
 
-for num in [2,3,4,5,6,7,8,9,"10_completed_10",11,12,13,14,15,16,17,18,19,"20_completed_second_phase",21,22,23,24,25,26,27,"28_next",29,30,31,32,33,34,35,36,37,38,39,40]:
+for num in [2,3,4,5,6,7,8,9,"10_completed_10",11,12,13,14,15,16,17,18,19,"20_completed_second_phase",21,22,23,24,25,26,27,"28_next",29,30,31,32,33,34,35,36,37,38,39,40,41,42,43,44]:
     file_path = "good_data/"+f"{num}"+".csv"
     with open(file_path,"r", encoding="utf-8") as file_obj:
         rows = file_obj.readlines()
