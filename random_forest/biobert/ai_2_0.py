@@ -16,7 +16,7 @@ data = [
 ]
 
 # Symptom query
-query = "chest pain, wheezing, trouble breathing"
+query = "fever,chills"
 
 # Predict disease match
 scores = []
