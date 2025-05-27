@@ -238,7 +238,7 @@ class BioBERTDiseaseAnalyzer:
             input_text = f"Symptoms: {symptoms_input}"
         
         input_embedding = self.get_biobert_embedding(input_text)
-        
+        print("************lol*************md",input_embedding,"luku")
         # Calculate similarities with all diseases
         predictions = []
         
