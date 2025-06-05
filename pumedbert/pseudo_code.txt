@@ -1,0 +1,310 @@
+# PubMedBERT Medical Disease Classification - Pseudo Code
+
+# ============= STEP 1: SETUP =============
+FUNCTION setup_environment():
+    INSTALL transformers, torch, pandas, sklearn
+    SET device = "cuda" if GPU available else "cpu"
+    DOWNLOAD PubMedBERT-base model and tokenizer
+    SET random_seed = 42
+
+# ============= STEP 2: DATA LOADING =============
+FUNCTION load_and_preprocess_data(csv_file_path):
+    df = READ_CSV(csv_file_path)
+    
+    # Handle missing values
+    FOR each symptom column in [symptoms_1 to symptoms_9]:
+        FILL missing values with empty string
+    
+    # Combine all text fields
+    FOR each row:
+        combined_text = CONCATENATE:
+            "Symptoms: " + symptoms_1 + ", " + symptoms_2 + ... + symptoms_9
+            + ". Description: " + description
+            + ". Additional symptoms: " + symptoms_description
+            + ". Causes: " + causes_description
+        
+        # Clean and standardize
+        combined_text = REMOVE extra spaces and special chars
+        combined_text = CONVERT to lowercase
+        combined_text = STANDARDIZE medical terms
+    
+    RETURN processed_dataframe
+
+# ============= STEP 3: LABEL ENCODING =============
+FUNCTION create_label_encoding(df):
+    unique_diseases = GET unique values from diseases_name column
+    label_to_id = CREATE dictionary mapping disease names to integers
+    id_to_label = CREATE reverse dictionary
+    
+    df['labels'] = MAP diseases_name using label_to_id
+    
+    RETURN df, label_to_id, id_to_label, num_classes
+
+# ============= STEP 4: TOKENIZATION =============
+FUNCTION tokenize_data(texts, tokenizer):
+    tokenized_data = []
+    
+    FOR each text in texts:
+        tokens = tokenizer.encode_plus(
+            text,
+            max_length = 512,
+            padding = "max_length",
+            truncation = True,
+            return_tensors = "pt"
+        )
+        tokenized_data.APPEND(tokens)
+    
+    RETURN tokenized_data
+
+# ============= STEP 5: DATA SPLITTING =============
+FUNCTION split_data(df):
+    # Stratified split to maintain disease distribution
+    train_df, temp_df = STRATIFIED_SPLIT(df, test_size=0.3, stratify=df['labels'])
+    val_df, test_df = STRATIFIED_SPLIT(temp_df, test_size=0.5, stratify=temp_df['labels'])
+    
+    RETURN train_df, val_df, test_df
+
+# ============= STEP 6: DATA AUGMENTATION =============
+FUNCTION augment_training_data(train_df):
+    augmented_data = []
+    
+    FOR each row in train_df:
+        # Original sample
+        augmented_data.APPEND(row)
+        
+        # Create variations
+        IF disease_count < threshold:  # Rare diseases
+            # Synonym replacement
+            augmented_text = REPLACE_SYNONYMS(row['text'])
+            augmented_data.APPEND(create_row(augmented_text, row['labels']))
+            
+            # Paraphrasing
+            paraphrased_text = PARAPHRASE_SYMPTOMS(row['text'])
+            augmented_data.APPEND(create_row(paraphrased_text, row['labels']))
+    
+    RETURN augmented_data
+
+# ============= STEP 7: CLASS WEIGHTS =============
+FUNCTION calculate_class_weights(train_labels):
+    class_counts = COUNT occurrences of each label
+    total_samples = LENGTH of train_labels
+    
+    class_weights = []
+    FOR each class:
+        weight = total_samples / (num_classes * class_count)
+        class_weights.APPEND(weight)
+    
+    RETURN class_weights
+
+# ============= STEP 8: MODEL SETUP =============
+FUNCTION setup_model(num_classes):
+    # Load pre-trained PubMedBERT
+    tokenizer = LOAD PubMedBERT tokenizer
+    model = LOAD PubMedBERT model
+    
+    # Add classification head
+    model.classifier = LINEAR_LAYER(768, num_classes)
+    
+    # Freeze early layers initially
+    FOR layer in model.bert.encoder.layer[:8]:
+        FREEZE layer parameters
+    
+    RETURN model, tokenizer
+
+# ============= STEP 9: TRAINING CONFIGURATION =============
+FUNCTION setup_training_config(model, class_weights):
+    optimizer = AdamW(model.parameters(), lr=2e-5, weight_decay=0.01)
+    
+    loss_function = CrossEntropyLoss(weight=class_weights)
+    
+    scheduler = LINEAR_SCHEDULER(
+        optimizer, 
+        num_warmup_steps=500,
+        num_training_steps=total_steps
+    )
+    
+    RETURN optimizer, loss_function, scheduler
+
+# ============= STEP 10: TRAINING LOOP =============
+FUNCTION train_model(model, train_loader, val_loader, num_epochs=4):
+    best_f1_score = 0
+    patience_counter = 0
+    
+    FOR epoch in range(num_epochs):
+        
+        # Training phase
+        model.train()
+        total_train_loss = 0
+        
+        FOR batch in train_loader:
+            input_ids, attention_mask, labels = batch
+            
+            # Forward pass
+            outputs = model(input_ids, attention_mask)
+            loss = loss_function(outputs.logits, labels)
+            
+            # Backward pass
+            optimizer.zero_grad()
+            loss.backward()
+            optimizer.step()
+            scheduler.step()
+            
+            total_train_loss += loss.item()
+        
+        # Validation phase
+        val_accuracy, val_f1 = evaluate_model(model, val_loader)
+        
+        PRINT("Epoch:", epoch, "Train Loss:", total_train_loss, 
+              "Val Accuracy:", val_accuracy, "Val F1:", val_f1)
+        
+        # Save best model
+        IF val_f1 > best_f1_score:
+            best_f1_score = val_f1
+            SAVE_MODEL(model, "best_model.pt")
+            patience_counter = 0
+        ELSE:
+            patience_counter += 1
+        
+        # Early stopping
+        IF patience_counter >= 2:
+            BREAK
+        
+        # Unfreeze more layers after first epoch
+        IF epoch == 0:
+            UNFREEZE all model parameters
+            optimizer = AdamW(model.parameters(), lr=1e-5)
+
+# ============= STEP 11: EVALUATION =============
+FUNCTION evaluate_model(model, data_loader):
+    model.eval()
+    all_predictions = []
+    all_labels = []
+    
+    WITH no_gradient():
+        FOR batch in data_loader:
+            input_ids, attention_mask, labels = batch
+            
+            outputs = model(input_ids, attention_mask)
+            predictions = ARGMAX(outputs.logits, dim=1)
+            
+            all_predictions.EXTEND(predictions)
+            all_labels.EXTEND(labels)
+    
+    accuracy = CALCULATE_ACCURACY(all_predictions, all_labels)
+    f1_score = CALCULATE_F1_SCORE(all_predictions, all_labels, average='macro')
+    
+    RETURN accuracy, f1_score
+
+# ============= STEP 12: FINAL TESTING =============
+FUNCTION final_evaluation(model, test_loader, id_to_label):
+    accuracy, f1_score = evaluate_model(model, test_loader)
+    
+    # Detailed classification report
+    predictions, true_labels = GET_PREDICTIONS_AND_LABELS(model, test_loader)
+    
+    classification_report = GENERATE_CLASSIFICATION_REPORT(
+        true_labels, predictions, target_names=disease_names
+    )
+    
+    confusion_matrix = GENERATE_CONFUSION_MATRIX(true_labels, predictions)
+    
+    PRINT("Final Test Accuracy:", accuracy)
+    PRINT("Final Test F1-score:", f1_score)
+    PRINT("Classification Report:", classification_report)
+    
+    RETURN accuracy, f1_score, classification_report
+
+# ============= STEP 13: CROSS VALIDATION =============
+FUNCTION cross_validation(df, k=5):
+    fold_results = []
+    
+    FOR fold in range(k):
+        train_fold, val_fold = CREATE_FOLD_SPLIT(df, fold, k)
+        
+        # Train model on fold
+        model = TRAIN_ON_FOLD(train_fold, val_fold)
+        
+        # Evaluate fold
+        fold_accuracy, fold_f1 = evaluate_model(model, val_fold)
+        fold_results.APPEND((fold_accuracy, fold_f1))
+    
+    avg_accuracy = AVERAGE([result[0] for result in fold_results])
+    avg_f1 = AVERAGE([result[1] for result in fold_results])
+    
+    RETURN avg_accuracy, avg_f1
+
+# ============= STEP 14: INFERENCE =============
+FUNCTION predict_disease(model, tokenizer, text_input, id_to_label):
+    # Preprocess input
+    processed_text = PREPROCESS_TEXT(text_input)
+    
+    # Tokenize
+    tokens = tokenizer.encode_plus(
+        processed_text,
+        max_length=512,
+        padding="max_length",
+        truncation=True,
+        return_tensors="pt"
+    )
+    
+    # Predict
+    WITH no_gradient():
+        outputs = model(tokens['input_ids'], tokens['attention_mask'])
+        probabilities = SOFTMAX(outputs.logits)
+        predicted_class = ARGMAX(probabilities)
+        confidence = MAX(probabilities)
+    
+    predicted_disease = id_to_label[predicted_class]
+    
+    RETURN predicted_disease, confidence
+
+# ============= MAIN EXECUTION =============
+FUNCTION main():
+    # Setup
+    setup_environment()
+    
+    # Data preparation
+    df = load_and_preprocess_data("medical_data.csv")
+    df, label_to_id, id_to_label, num_classes = create_label_encoding(df)
+    
+    # Split data
+    train_df, val_df, test_df = split_data(df)
+    
+    # Augment training data
+    train_df = augment_training_data(train_df)
+    
+    # Setup model
+    model, tokenizer = setup_model(num_classes)
+    
+    # Calculate class weights
+    class_weights = calculate_class_weights(train_df['labels'])
+    
+    # Setup training
+    optimizer, loss_function, scheduler = setup_training_config(model, class_weights)
+    
+    # Create data loaders
+    train_loader = CREATE_DATALOADER(train_df, tokenizer, batch_size=16)
+    val_loader = CREATE_DATALOADER(val_df, tokenizer, batch_size=16)
+    test_loader = CREATE_DATALOADER(test_df, tokenizer, batch_size=16)
+    
+    # Train model
+    train_model(model, train_loader, val_loader)
+    
+    # Load best model and evaluate
+    best_model = LOAD_MODEL("best_model.pt")
+    final_accuracy, final_f1, report = final_evaluation(best_model, test_loader, id_to_label)
+    
+    # Cross validation
+    cv_accuracy, cv_f1 = cross_validation(df)
+    
+    # Save final model and tokenizer
+    SAVE_MODEL_AND_TOKENIZER(best_model, tokenizer, "final_model/")
+    SAVE_LABEL_MAPPINGS(label_to_id, id_to_label, "label_mappings.json")
+    
+    PRINT("Training completed successfully!")
+    PRINT("Final Test Accuracy:", final_accuracy)
+    PRINT("Cross-validation Accuracy:", cv_accuracy)
+
+# Execute main function
+IF __name__ == "__main__":
+    main()
