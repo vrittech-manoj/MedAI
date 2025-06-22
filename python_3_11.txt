@@ -1,0 +1,6 @@
+py -3.11
+"C:\Users\<YourName>\AppData\Local\Programs\Python\Python311\python.exe"
+py -3.11 script.py
+py -3.11 -m venv tensorflow_env
+tensorflow_env\Scripts\activate
+pip install tensorflow

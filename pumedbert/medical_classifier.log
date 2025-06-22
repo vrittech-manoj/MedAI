@@ -1,0 +1,1225 @@
+2025-06-07 09:39:28,473 - INFO - Starting medical disease classification system...
+2025-06-07 09:39:28,474 - INFO - System ready for production use!
+2025-06-07 09:39:47,793 - INFO - Starting medical disease classification system...
+2025-06-07 09:39:47,794 - INFO - System ready for production use!
+2025-06-07 09:46:58,518 - INFO - Starting medical disease classification system...
+2025-06-07 09:46:58,518 - INFO - System ready for production use!
+2025-06-07 09:47:13,670 - INFO - Starting medical disease classification system...
+2025-06-07 09:47:13,671 - INFO - Initialized classifier with device: cpu
+2025-06-07 09:47:13,671 - INFO - Available CPU cores: 8
+2025-06-07 09:47:13,688 - INFO - Available RAM: 7.24 GB
+2025-06-07 09:47:13,689 - INFO - Training with settings: {'epochs': 5, 'batch_size': 16, 'learning_rate': 2e-05, 'accumulation_steps': 2, 'warmup_ratio': 0.1}
+2025-06-07 09:47:13,689 - INFO - Loading tokenizer...
+2025-06-07 09:47:14,772 - INFO - Loading dataset from 2.csv
+2025-06-07 09:47:14,842 - INFO - Processed chunk, total rows: 20, Memory: 305.98 MB
+2025-06-07 09:47:15,024 - INFO - Total dataset size: 20 samples
+2025-06-07 09:47:15,026 - INFO - Number of unique diseases: 20
+2025-06-07 09:47:15,037 - INFO - Disease distribution:
+diseases_name
+Common Cold     1
+Influenza       1
+COVID-19        1
+Migraine        1
+Dengue          1
+Malaria         1
+Asthma          1
+Tuberculosis    1
+Pneumonia       1
+Bronchitis      1
+Name: count, dtype: int64
+2025-06-07 09:47:15,038 - INFO - Creating data loaders with batch_size=16, num_workers=4
+2025-06-07 09:47:15,042 - ERROR - Training failed: The least populated class in y has only 1 member, which is too few. The minimum number of groups for any class cannot be less than 2.
+2025-06-07 10:11:01,841 - INFO - Starting medical disease classification system...
+2025-06-07 10:11:01,842 - INFO - Initialized classifier with device: cpu
+2025-06-07 10:11:01,842 - INFO - Available CPU cores: 8
+2025-06-07 10:11:01,857 - INFO - Available RAM: 7.24 GB
+2025-06-07 10:11:01,857 - INFO - Training with settings: {'epochs': 5, 'batch_size': 16, 'learning_rate': 2e-05, 'accumulation_steps': 2, 'warmup_ratio': 0.1}
+2025-06-07 10:11:01,857 - INFO - Loading tokenizer...
+2025-06-07 10:11:02,715 - INFO - Loading dataset from 2.csv
+2025-06-07 10:11:02,765 - INFO - Processed chunk, total rows: 60, Memory: 306.48 MB
+2025-06-07 10:11:02,978 - INFO - Total dataset size: 60 samples
+2025-06-07 10:11:02,980 - INFO - Number of unique diseases: 20
+2025-06-07 10:11:02,988 - INFO - Disease distribution:
+diseases_name
+Common Cold     3
+Influenza       3
+COVID-19        3
+Migraine        3
+Dengue          3
+Malaria         3
+Asthma          3
+Tuberculosis    3
+Pneumonia       3
+Bronchitis      3
+Name: count, dtype: int64
+2025-06-07 10:11:02,988 - INFO - Creating data loaders with batch_size=16, num_workers=4
+2025-06-07 10:11:02,993 - ERROR - Training failed: The test_size = 12 should be greater or equal to the number of classes = 20
+2025-06-07 10:13:31,867 - INFO - Starting medical disease classification system...
+2025-06-07 10:13:31,867 - INFO - Initialized classifier with device: cpu
+2025-06-07 10:13:31,868 - INFO - Available CPU cores: 8
+2025-06-07 10:13:31,886 - INFO - Available RAM: 7.24 GB
+2025-06-07 10:13:31,887 - INFO - Training with settings: {'epochs': 5, 'batch_size': 16, 'learning_rate': 2e-05, 'accumulation_steps': 2, 'warmup_ratio': 0.1}
+2025-06-07 10:13:31,887 - INFO - Loading tokenizer...
+2025-06-07 10:13:33,054 - INFO - Loading dataset from 2.csv
+2025-06-07 10:13:33,110 - INFO - Processed chunk, total rows: 41, Memory: 305.95 MB
+2025-06-07 10:13:33,307 - INFO - Total dataset size: 41 samples
+2025-06-07 10:13:33,309 - INFO - Number of unique diseases: 21
+2025-06-07 10:13:33,311 - INFO - Disease distribution:
+diseases_name
+Common Cold     2
+Influenza       2
+COVID-19        2
+Migraine        2
+Dengue          2
+Malaria         2
+Asthma          2
+Tuberculosis    2
+Pneumonia       2
+Bronchitis      2
+Name: count, dtype: int64
+2025-06-07 10:13:33,311 - INFO - Creating data loaders with batch_size=16, num_workers=4
+2025-06-07 10:13:33,313 - ERROR - Training failed: The least populated class in y has only 1 member, which is too few. The minimum number of groups for any class cannot be less than 2.
+2025-06-07 10:31:21,780 - INFO - Starting medical disease classification system...
+2025-06-07 10:31:21,781 - INFO - Initialized classifier with device: cpu
+2025-06-07 10:31:21,781 - INFO - Available CPU cores: 8
+2025-06-07 10:31:21,806 - INFO - Available RAM: 7.24 GB
+2025-06-07 10:31:21,806 - INFO - Training with settings: {'epochs': 5, 'batch_size': 16, 'learning_rate': 2e-05, 'accumulation_steps': 2, 'warmup_ratio': 0.1}
+2025-06-07 10:31:21,806 - INFO - Loading tokenizer...
+2025-06-07 10:31:22,758 - INFO - Loading dataset from 2.csv
+2025-06-07 10:31:22,815 - INFO - Processed chunk, total rows: 20, Memory: 305.91 MB
+2025-06-07 10:31:23,041 - INFO - Total dataset size: 20 samples
+2025-06-07 10:31:23,101 - INFO - Number of unique diseases: 20
+2025-06-07 10:31:23,113 - INFO - Disease distribution:
+diseases_name
+Common Cold     1
+Influenza       1
+COVID-19        1
+Migraine        1
+Dengue          1
+Malaria         1
+Asthma          1
+Tuberculosis    1
+Pneumonia       1
+Bronchitis      1
+Name: count, dtype: int64
+2025-06-07 10:31:23,114 - INFO - Creating data loaders with batch_size=16, num_workers=4
+2025-06-07 10:31:23,121 - ERROR - Training failed: The least populated class in y has only 1 member, which is too few. The minimum number of groups for any class cannot be less than 2.
+2025-06-07 10:40:24,419 - INFO - Starting medical disease classification system...
+2025-06-07 10:40:24,420 - INFO - Initialized classifier with device: cpu
+2025-06-07 10:40:24,420 - INFO - Available CPU cores: 8
+2025-06-07 10:40:24,436 - INFO - Available RAM: 7.24 GB
+2025-06-07 10:40:24,437 - INFO - Training with settings: {'epochs': 5, 'batch_size': 16, 'learning_rate': 2e-05, 'accumulation_steps': 2, 'warmup_ratio': 0.1}
+2025-06-07 10:40:24,437 - INFO - Loading tokenizer...
+2025-06-07 10:40:25,971 - INFO - Loading dataset from 2.csv
+2025-06-07 10:40:26,032 - INFO - Processed chunk, total rows: 15, Memory: 305.99 MB
+2025-06-07 10:40:26,231 - INFO - Total dataset size: 15 samples
+2025-06-07 10:40:26,232 - INFO - Number of unique diseases: 5
+2025-06-07 10:40:26,308 - INFO - Disease distribution:
+diseases_name
+Dengue       3
+Asthma       3
+Migraine     3
+Pneumonia    3
+Typhoid      3
+Name: count, dtype: int64
+2025-06-07 10:40:26,309 - INFO - Creating data loaders with batch_size=16, num_workers=4
+2025-06-07 10:40:26,312 - ERROR - Training failed: The test_size = 3 should be greater or equal to the number of classes = 5
+2025-06-07 10:44:35,199 - INFO - Starting medical disease classification system...
+2025-06-07 10:44:35,200 - INFO - Initialized classifier with device: cpu
+2025-06-07 10:44:35,200 - INFO - Available CPU cores: 8
+2025-06-07 10:44:35,214 - INFO - Available RAM: 7.24 GB
+2025-06-07 10:44:35,214 - INFO - Training with settings: {'epochs': 5, 'batch_size': 16, 'learning_rate': 2e-05, 'accumulation_steps': 2, 'warmup_ratio': 0.1}
+2025-06-07 10:44:35,215 - INFO - Loading tokenizer...
+2025-06-07 10:44:36,078 - INFO - Loading dataset from 2.csv
+2025-06-07 10:44:36,087 - INFO - Processed chunk, total rows: 15, Memory: 306.06 MB
+2025-06-07 10:44:36,308 - INFO - Total dataset size: 15 samples
+2025-06-07 10:44:36,309 - INFO - Number of unique diseases: 5
+2025-06-07 10:44:36,311 - INFO - Disease distribution:
+diseases_name
+Dengue       3
+Asthma       3
+Migraine     3
+Pneumonia    3
+Typhoid      3
+Name: count, dtype: int64
+2025-06-07 10:44:36,312 - INFO - Creating data loaders with batch_size=16, num_workers=4
+2025-06-07 10:44:36,348 - INFO - Dataset splits - Train: 10, Val: 2, Test: 3
+2025-06-07 10:45:07,140 - INFO - Starting training for 5 epochs...
+2025-06-07 10:45:07,141 - INFO - Epoch 1/5
+2025-06-07 10:47:09,586 - INFO - Train Loss: 1.6601, Train Acc: 0.0000
+2025-06-07 10:47:09,592 - INFO - Val Loss: 1.6091, Val Acc: 0.5000, Val F1: 0.3333
+2025-06-07 10:47:11,679 - INFO - New best model saved! F1: 0.3333
+2025-06-07 10:47:11,680 - INFO - Epoch 2/5
+2025-06-07 10:48:17,411 - INFO - Train Loss: 1.6957, Train Acc: 0.0000
+2025-06-07 10:48:17,415 - INFO - Val Loss: 1.6079, Val Acc: 0.5000, Val F1: 0.3333
+2025-06-07 10:48:17,416 - INFO - Epoch 3/5
+2025-06-07 10:49:23,036 - INFO - Train Loss: 1.6083, Train Acc: 0.1000
+2025-06-07 10:49:23,040 - INFO - Val Loss: 1.6065, Val Acc: 0.5000, Val F1: 0.3333
+2025-06-07 10:49:23,040 - INFO - Epoch 4/5
+2025-06-07 10:50:18,274 - INFO - Train Loss: 1.6483, Train Acc: 0.1000
+2025-06-07 10:50:18,279 - INFO - Val Loss: 1.6054, Val Acc: 0.5000, Val F1: 0.3333
+2025-06-07 10:50:18,280 - INFO - Early stopping triggered
+2025-06-07 10:50:18,286 - INFO - Loading model from best_medical_model.pt
+2025-06-07 10:50:19,375 - ERROR - Training failed: Weights only load failed. This file can still be loaded, to do so you have two options, [1mdo those steps only if you trust the source of the checkpoint[0m. 
+	(1) In PyTorch 2.6, we changed the default value of the `weights_only` argument in `torch.load` from `False` to `True`. Re-running `torch.load` with `weights_only` set to `False` will likely succeed, but it can result in arbitrary code execution. Do it only if you got the file from a trusted source.
+	(2) Alternatively, to load with `weights_only=True` please check the recommended steps in the following error message.
+	WeightsUnpickler error: Unsupported global: GLOBAL sklearn.preprocessing._label.LabelEncoder was not an allowed global by default. Please use `torch.serialization.add_safe_globals([sklearn.preprocessing._label.LabelEncoder])` or the `torch.serialization.safe_globals([sklearn.preprocessing._label.LabelEncoder])` context manager to allowlist this global if you trust this class/function.
+
+Check the documentation of torch.load to learn more about types accepted by default with weights_only https://pytorch.org/docs/stable/generated/torch.load.html.
+2025-06-07 14:20:48,721 - INFO - Starting medical disease classification system...
+2025-06-07 14:20:48,723 - INFO - Initialized classifier with device: cpu
+2025-06-07 14:20:48,723 - INFO - Available CPU cores: 8
+2025-06-07 14:20:48,746 - INFO - Available RAM: 7.24 GB
+2025-06-07 14:20:48,749 - INFO - Training with settings: {'epochs': 5, 'batch_size': 16, 'learning_rate': 2e-05, 'accumulation_steps': 2, 'warmup_ratio': 0.1}
+2025-06-07 14:20:48,751 - INFO - Loading tokenizer...
+2025-06-07 14:20:49,716 - INFO - Loading dataset from 2.csv
+2025-06-07 14:20:49,774 - INFO - Processed chunk, total rows: 15, Memory: 300.75 MB
+2025-06-07 14:20:49,973 - INFO - Total dataset size: 15 samples
+2025-06-07 14:20:49,975 - INFO - Number of unique diseases: 5
+2025-06-07 14:20:49,980 - INFO - Disease distribution:
+diseases_name
+Dengue       3
+Asthma       3
+Migraine     3
+Pneumonia    3
+Typhoid      3
+Name: count, dtype: int64
+2025-06-07 14:20:49,981 - INFO - Creating data loaders with batch_size=16, num_workers=4
+2025-06-07 14:20:49,990 - INFO - Dataset splits - Train: 10, Val: 2, Test: 3
+2025-06-07 14:20:56,283 - INFO - Starting training for 5 epochs...
+2025-06-07 14:20:56,283 - INFO - Epoch 1/5
+2025-06-07 14:22:54,499 - INFO - Train Loss: 1.6601, Train Acc: 0.0000
+2025-06-07 14:22:54,504 - INFO - Val Loss: 1.6091, Val Acc: 0.5000, Val F1: 0.3333
+2025-06-07 14:22:56,293 - INFO - New best model saved! F1: 0.3333
+2025-06-07 14:22:56,293 - INFO - Epoch 2/5
+2025-06-08 08:32:18,625 - INFO - Starting medical disease classification system...
+2025-06-08 08:32:18,626 - INFO - Initialized classifier with device: cpu
+2025-06-08 08:32:18,626 - INFO - Available CPU cores: 8
+2025-06-08 08:32:18,643 - INFO - Available RAM: 7.24 GB
+2025-06-08 08:32:18,644 - INFO - Training with settings: {'epochs': 5, 'batch_size': 16, 'learning_rate': 2e-05, 'accumulation_steps': 2, 'warmup_ratio': 0.1}
+2025-06-08 08:32:18,644 - INFO - Loading tokenizer...
+2025-06-08 08:32:19,405 - INFO - Loading dataset from 2.csv
+2025-06-08 08:32:19,474 - INFO - Processed chunk, total rows: 15, Memory: 306.98 MB
+2025-06-08 08:32:19,581 - INFO - Total dataset size: 15 samples
+2025-06-08 08:32:19,583 - INFO - Number of unique diseases: 5
+2025-06-08 08:32:19,588 - INFO - Disease distribution:
+diseases_name
+Dengue       3
+Asthma       3
+Migraine     3
+Pneumonia    3
+Typhoid      3
+Name: count, dtype: int64
+2025-06-08 08:32:19,588 - INFO - Creating data loaders with batch_size=16, num_workers=4
+2025-06-08 08:32:19,593 - INFO - Dataset splits - Train: 10, Val: 2, Test: 3
+2025-06-08 08:32:24,750 - INFO - Starting training for 5 epochs...
+2025-06-08 08:32:24,750 - INFO - Epoch 1/5
+2025-06-08 08:34:11,822 - INFO - Train Loss: 1.6601, Train Acc: 0.0000
+2025-06-08 08:34:11,829 - INFO - Val Loss: 1.6091, Val Acc: 0.5000, Val F1: 0.3333
+2025-06-08 08:34:12,685 - INFO - New best model saved! F1: 0.3333
+2025-06-08 08:34:12,685 - INFO - Epoch 2/5
+2025-06-08 08:35:09,995 - INFO - Train Loss: 1.6957, Train Acc: 0.0000
+2025-06-08 08:35:09,998 - INFO - Val Loss: 1.6079, Val Acc: 0.5000, Val F1: 0.3333
+2025-06-08 08:35:09,998 - INFO - Epoch 3/5
+2025-06-08 08:36:06,055 - INFO - Train Loss: 1.6083, Train Acc: 0.1000
+2025-06-08 08:36:06,058 - INFO - Val Loss: 1.6065, Val Acc: 0.5000, Val F1: 0.3333
+2025-06-08 08:36:06,059 - INFO - Epoch 4/5
+2025-06-08 08:37:01,804 - INFO - Train Loss: 1.6483, Train Acc: 0.1000
+2025-06-08 08:37:01,808 - INFO - Val Loss: 1.6054, Val Acc: 0.5000, Val F1: 0.3333
+2025-06-08 08:37:01,808 - INFO - Early stopping triggered
+2025-06-08 08:37:01,810 - INFO - Loading model from best_medical_model.pt
+2025-06-08 08:37:02,532 - ERROR - Training failed: Weights only load failed. This file can still be loaded, to do so you have two options, [1mdo those steps only if you trust the source of the checkpoint[0m. 
+	(1) In PyTorch 2.6, we changed the default value of the `weights_only` argument in `torch.load` from `False` to `True`. Re-running `torch.load` with `weights_only` set to `False` will likely succeed, but it can result in arbitrary code execution. Do it only if you got the file from a trusted source.
+	(2) Alternatively, to load with `weights_only=True` please check the recommended steps in the following error message.
+	WeightsUnpickler error: Unsupported global: GLOBAL sklearn.preprocessing._label.LabelEncoder was not an allowed global by default. Please use `torch.serialization.add_safe_globals([sklearn.preprocessing._label.LabelEncoder])` or the `torch.serialization.safe_globals([sklearn.preprocessing._label.LabelEncoder])` context manager to allowlist this global if you trust this class/function.
+
+Check the documentation of torch.load to learn more about types accepted by default with weights_only https://pytorch.org/docs/stable/generated/torch.load.html.
+2025-06-08 08:46:49,524 - INFO - Starting medical disease classification system...
+2025-06-08 08:46:49,526 - INFO - Initialized classifier with device: cpu
+2025-06-08 08:46:49,526 - INFO - Available CPU cores: 8
+2025-06-08 08:46:49,546 - INFO - Available RAM: 7.24 GB
+2025-06-08 08:46:49,546 - INFO - Training with settings: {'epochs': 5, 'batch_size': 16, 'learning_rate': 2e-05, 'accumulation_steps': 2, 'warmup_ratio': 0.1}
+2025-06-08 08:46:49,546 - INFO - Loading tokenizer...
+2025-06-08 08:46:50,315 - INFO - Loading dataset from 2.csv
+2025-06-08 08:46:50,361 - INFO - Processed chunk, total rows: 15, Memory: 306.14 MB
+2025-06-08 08:46:50,474 - INFO - Total dataset size: 15 samples
+2025-06-08 08:46:50,475 - INFO - Number of unique diseases: 5
+2025-06-08 08:46:50,479 - INFO - Disease distribution:
+diseases_name
+Dengue       3
+Asthma       3
+Migraine     3
+Pneumonia    3
+Typhoid      3
+Name: count, dtype: int64
+2025-06-08 08:46:50,479 - INFO - Creating data loaders with batch_size=16, num_workers=4
+2025-06-08 08:46:50,486 - INFO - Dataset splits - Train: 10, Val: 2, Test: 3
+2025-06-08 08:46:55,363 - INFO - Starting training for 5 epochs...
+2025-06-08 08:46:55,363 - INFO - Epoch 1/5
+2025-06-08 08:48:38,892 - INFO - Train Loss: 1.6601, Train Acc: 0.0000
+2025-06-08 08:48:38,896 - INFO - Val Loss: 1.6091, Val Acc: 0.5000, Val F1: 0.3333
+2025-06-08 08:48:39,736 - INFO - New best model saved! F1: 0.3333
+2025-06-08 08:48:39,737 - INFO - Epoch 2/5
+2025-06-08 08:49:32,516 - INFO - Train Loss: 1.6957, Train Acc: 0.0000
+2025-06-08 08:49:32,520 - INFO - Val Loss: 1.6079, Val Acc: 0.5000, Val F1: 0.3333
+2025-06-08 08:49:32,520 - INFO - Epoch 3/5
+2025-06-08 08:50:43,740 - INFO - Train Loss: 1.6083, Train Acc: 0.1000
+2025-06-08 08:50:43,744 - INFO - Val Loss: 1.6065, Val Acc: 0.5000, Val F1: 0.3333
+2025-06-08 08:50:43,745 - INFO - Epoch 4/5
+2025-06-08 08:51:41,999 - INFO - Train Loss: 1.6483, Train Acc: 0.1000
+2025-06-08 08:51:42,002 - INFO - Val Loss: 1.6054, Val Acc: 0.5000, Val F1: 0.3333
+2025-06-08 08:51:42,002 - INFO - Early stopping triggered
+2025-06-08 08:51:42,004 - INFO - Loading model from best_medical_model.pt
+2025-06-08 08:51:42,752 - INFO - Loaded model with weights_only=False
+2025-06-08 08:51:45,562 - INFO - Model loaded successfully!
+2025-06-08 08:52:11,068 - INFO - Final Test Results - Accuracy: 0.0000, F1: 0.0000
+2025-06-08 08:52:11,125 - INFO - Model components saved to ./medical_model_production/
+2025-06-08 08:52:17,214 - INFO - Training completed successfully! Test Accuracy: 0.0000, Test F1: 0.0000
+2025-06-08 08:52:17,215 - INFO - System ready for production use!
+2025-06-08 08:56:37,505 - INFO - Starting medical disease classification system...
+2025-06-08 08:56:37,505 - INFO - Initialized classifier with device: cpu
+2025-06-08 08:56:37,505 - INFO - Available CPU cores: 8
+2025-06-08 08:56:37,521 - INFO - Available RAM: 7.24 GB
+2025-06-08 08:56:37,522 - INFO - Loading model from best_medical_model.pt
+2025-06-08 08:56:37,915 - INFO - Loaded model with weights_only=False
+2025-06-08 08:56:43,329 - INFO - Model loaded successfully!
+2025-06-08 08:56:44,462 - INFO - Initialized classifier with device: cpu
+2025-06-08 08:56:44,462 - INFO - Available CPU cores: 8
+2025-06-08 08:56:44,488 - INFO - Available RAM: 7.24 GB
+2025-06-08 08:56:44,488 - INFO - Loading model from best_medical_model.pt
+2025-06-08 08:56:44,862 - INFO - Loaded model with weights_only=False
+2025-06-08 08:56:47,657 - INFO - Model loaded successfully!
+2025-06-08 08:56:48,647 - INFO - Initialized classifier with device: cpu
+2025-06-08 08:56:48,647 - INFO - Available CPU cores: 8
+2025-06-08 08:56:48,679 - INFO - Available RAM: 7.24 GB
+2025-06-08 08:56:48,679 - INFO - Loading model from best_medical_model.pt
+2025-06-08 08:56:49,094 - INFO - Loaded model with weights_only=False
+2025-06-08 08:56:51,448 - INFO - Model loaded successfully!
+2025-06-08 08:56:52,445 - INFO - Initialized classifier with device: cpu
+2025-06-08 08:56:52,446 - INFO - Available CPU cores: 8
+2025-06-08 08:56:52,473 - INFO - Available RAM: 7.24 GB
+2025-06-08 08:56:52,474 - INFO - Loading model from best_medical_model.pt
+2025-06-08 08:56:52,889 - INFO - Loaded model with weights_only=False
+2025-06-08 08:56:55,326 - INFO - Model loaded successfully!
+2025-06-08 08:56:56,317 - INFO - System ready for production use!
+2025-06-08 08:59:17,501 - INFO - Starting medical disease classification system...
+2025-06-08 08:59:17,501 - INFO - Initialized classifier with device: cpu
+2025-06-08 08:59:17,502 - INFO - Available CPU cores: 8
+2025-06-08 08:59:17,515 - INFO - Available RAM: 7.24 GB
+2025-06-08 08:59:17,515 - INFO - Loading model from best_medical_model.pt
+2025-06-08 08:59:17,906 - INFO - Loaded model with weights_only=False
+2025-06-08 08:59:22,713 - INFO - Model loaded successfully!
+2025-06-08 08:59:23,641 - INFO - System ready for production use!
+2025-06-08 09:04:55,515 - INFO - Starting medical disease classification system...
+2025-06-08 09:04:55,516 - INFO - Initialized classifier with device: cpu
+2025-06-08 09:04:55,516 - INFO - Available CPU cores: 8
+2025-06-08 09:04:55,529 - INFO - Available RAM: 7.24 GB
+2025-06-08 09:04:55,530 - INFO - Loading model from best_medical_model.pt
+2025-06-08 09:04:55,762 - INFO - Loaded model with weights_only=False
+2025-06-08 09:05:00,540 - INFO - Model loaded successfully!
+2025-06-08 09:05:01,598 - INFO - System ready for production use!
+2025-06-08 09:05:49,949 - INFO - Starting medical disease classification system...
+2025-06-08 09:05:49,950 - INFO - Initialized classifier with device: cpu
+2025-06-08 09:05:49,950 - INFO - Available CPU cores: 8
+2025-06-08 09:05:49,964 - INFO - Available RAM: 7.24 GB
+2025-06-08 09:05:49,964 - INFO - Loading model from best_medical_model.pt
+2025-06-08 09:05:50,348 - INFO - Loaded model with weights_only=False
+2025-06-08 09:05:55,498 - INFO - Model loaded successfully!
+2025-06-08 09:05:56,519 - INFO - Initialized classifier with device: cpu
+2025-06-08 09:05:56,520 - INFO - Available CPU cores: 8
+2025-06-08 09:05:56,541 - INFO - Available RAM: 7.24 GB
+2025-06-08 09:05:56,541 - INFO - Loading model from best_medical_model.pt
+2025-06-08 09:05:56,914 - INFO - Loaded model with weights_only=False
+2025-06-08 09:05:59,291 - INFO - Model loaded successfully!
+2025-06-08 09:06:00,264 - INFO - System ready for production use!
+2025-06-10 16:46:43,715 - INFO - Starting medical disease classification system...
+2025-06-10 16:46:43,716 - INFO - Initialized classifier with device: cpu
+2025-06-10 16:46:43,716 - INFO - Available CPU cores: 8
+2025-06-10 16:46:43,722 - INFO - Available RAM: 7.24 GB
+2025-06-10 16:46:43,723 - INFO - Loading model from best_medical_model.pt
+2025-06-10 16:46:44,418 - INFO - Loaded model with weights_only=False
+2025-06-10 16:46:52,873 - INFO - Model loaded successfully!
+2025-06-10 16:46:54,183 - INFO - Initialized classifier with device: cpu
+2025-06-10 16:46:54,184 - INFO - Available CPU cores: 8
+2025-06-10 16:46:54,190 - INFO - Available RAM: 7.24 GB
+2025-06-10 16:46:54,191 - INFO - Loading model from best_medical_model.pt
+2025-06-10 16:46:54,847 - INFO - Loaded model with weights_only=False
+2025-06-10 16:46:59,579 - INFO - Model loaded successfully!
+2025-06-10 16:47:00,778 - INFO - System ready for production use!
+2025-06-10 16:47:23,975 - INFO - Starting medical disease classification system...
+2025-06-10 16:47:23,976 - INFO - Initialized classifier with device: cpu
+2025-06-10 16:47:23,976 - INFO - Available CPU cores: 8
+2025-06-10 16:47:23,983 - INFO - Available RAM: 7.24 GB
+2025-06-10 16:47:23,983 - INFO - Loading model from best_medical_model.pt
+2025-06-10 16:47:24,656 - INFO - Loaded model with weights_only=False
+2025-06-10 16:47:32,287 - INFO - Model loaded successfully!
+2025-06-10 16:47:33,418 - INFO - System ready for production use!
+2025-06-10 16:49:34,020 - INFO - Starting medical disease classification system...
+2025-06-10 16:49:34,020 - INFO - Initialized classifier with device: cpu
+2025-06-10 16:49:34,020 - INFO - Available CPU cores: 8
+2025-06-10 16:49:34,027 - INFO - Available RAM: 7.24 GB
+2025-06-10 16:49:34,027 - INFO - Loading model from best_medical_model.pt
+2025-06-10 16:49:34,387 - INFO - Loaded model with weights_only=False
+2025-06-10 16:49:42,847 - INFO - Model loaded successfully!
+2025-06-10 16:49:44,040 - INFO - System ready for production use!
+2025-06-10 16:50:10,137 - INFO - Starting medical disease classification system...
+2025-06-10 16:50:10,137 - INFO - Initialized classifier with device: cpu
+2025-06-10 16:50:10,138 - INFO - Available CPU cores: 8
+2025-06-10 16:50:10,146 - INFO - Available RAM: 7.24 GB
+2025-06-10 16:50:10,148 - INFO - Loading model from best_medical_model.pt
+2025-06-10 16:50:10,563 - INFO - Loaded model with weights_only=False
+2025-06-10 16:50:17,696 - INFO - Model loaded successfully!
+2025-06-10 16:50:18,719 - INFO - Initialized classifier with device: cpu
+2025-06-10 16:50:18,719 - INFO - Available CPU cores: 8
+2025-06-10 16:50:18,726 - INFO - Available RAM: 7.24 GB
+2025-06-10 16:50:18,726 - INFO - Loading model from best_medical_model.pt
+2025-06-10 16:50:19,269 - INFO - Loaded model with weights_only=False
+2025-06-10 16:50:23,159 - INFO - Model loaded successfully!
+2025-06-10 16:50:24,232 - INFO - Initialized classifier with device: cpu
+2025-06-10 16:50:24,232 - INFO - Available CPU cores: 8
+2025-06-10 16:50:24,240 - INFO - Available RAM: 7.24 GB
+2025-06-10 16:50:24,273 - INFO - Loading model from best_medical_model.pt
+2025-06-10 16:50:24,926 - INFO - Loaded model with weights_only=False
+2025-06-10 16:50:28,247 - INFO - Model loaded successfully!
+2025-06-10 16:50:29,320 - INFO - Initialized classifier with device: cpu
+2025-06-10 16:50:29,320 - INFO - Available CPU cores: 8
+2025-06-10 16:50:29,331 - INFO - Available RAM: 7.24 GB
+2025-06-10 16:50:29,331 - INFO - Loading model from best_medical_model.pt
+2025-06-10 16:50:30,125 - INFO - Loaded model with weights_only=False
+2025-06-10 16:50:34,068 - INFO - Model loaded successfully!
+2025-06-10 16:50:35,174 - INFO - Initialized classifier with device: cpu
+2025-06-10 16:50:35,174 - INFO - Available CPU cores: 8
+2025-06-10 16:50:35,182 - INFO - Available RAM: 7.24 GB
+2025-06-10 16:50:35,183 - INFO - Loading model from best_medical_model.pt
+2025-06-10 16:50:35,946 - INFO - Loaded model with weights_only=False
+2025-06-10 16:50:40,709 - INFO - Model loaded successfully!
+2025-06-10 16:50:41,728 - INFO - System ready for production use!
+2025-06-10 16:57:35,261 - INFO - Starting medical disease classification system...
+2025-06-10 16:57:35,261 - INFO - Initialized classifier with device: cpu
+2025-06-10 16:57:35,261 - INFO - Available CPU cores: 8
+2025-06-10 16:57:35,269 - INFO - Available RAM: 7.24 GB
+2025-06-10 16:57:35,269 - INFO - Training with settings: {'epochs': 10, 'batch_size': 4, 'learning_rate': 1e-05, 'warmup_ratio': 0.1}
+2025-06-10 16:57:35,269 - INFO - Loading tokenizer...
+2025-06-10 16:57:37,120 - INFO - Loading dataset from 2.csv
+2025-06-10 16:57:37,134 - INFO - Loaded 15 samples from CSV
+2025-06-10 16:57:37,177 - INFO - After filtering: 15 valid samples
+2025-06-10 16:57:37,179 - INFO - Number of unique diseases: 5
+2025-06-10 16:57:37,184 - INFO - Disease distribution:
+diseases_name
+Dengue       3
+Asthma       3
+Migraine     3
+Pneumonia    3
+Typhoid      3
+Name: count, dtype: int64
+2025-06-10 16:57:37,187 - INFO - Class balance - Min: 3, Max: 3, Ratio: 1.00
+2025-06-10 16:57:37,191 - INFO - Creating data loaders with batch_size=4, num_workers=0
+2025-06-10 16:57:37,198 - ERROR - Training failed: The test_size = 3 should be greater or equal to the number of classes = 5
+2025-06-10 17:02:12,415 - INFO - Starting medical disease classification system...
+2025-06-10 17:02:12,417 - INFO - Initialized classifier with device: cpu
+2025-06-10 17:02:12,417 - INFO - Available CPU cores: 8
+2025-06-10 17:02:12,425 - INFO - Available RAM: 7.24 GB
+2025-06-10 17:02:12,425 - INFO - Loading model from best_medical_model.pt
+2025-06-10 17:02:13,130 - INFO - Loaded model with weights_only=False
+2025-06-10 17:02:22,009 - INFO - Model loaded successfully!
+2025-06-10 17:02:23,370 - INFO - Initialized classifier with device: cpu
+2025-06-10 17:02:23,371 - INFO - Available CPU cores: 8
+2025-06-10 17:02:23,380 - INFO - Available RAM: 7.24 GB
+2025-06-10 17:02:23,381 - INFO - Loading model from best_medical_model.pt
+2025-06-10 17:02:24,014 - INFO - Loaded model with weights_only=False
+2025-06-10 17:02:27,622 - INFO - Model loaded successfully!
+2025-06-10 17:02:29,015 - INFO - System ready for production use!
+2025-06-10 17:02:49,664 - INFO - Starting medical disease classification system...
+2025-06-10 17:02:49,664 - INFO - Initialized classifier with device: cpu
+2025-06-10 17:02:49,665 - INFO - Available CPU cores: 8
+2025-06-10 17:02:49,671 - INFO - Available RAM: 7.24 GB
+2025-06-10 17:02:49,671 - INFO - Training with settings: {'epochs': 10, 'batch_size': 4, 'learning_rate': 1e-05, 'warmup_ratio': 0.1}
+2025-06-10 17:02:49,672 - INFO - Loading tokenizer...
+2025-06-10 17:02:51,395 - INFO - Loading dataset from sample_data.csv
+2025-06-10 17:02:51,398 - ERROR - Error reading CSV: [Errno 2] No such file or directory: 'sample_data.csv'
+2025-06-10 17:02:51,398 - ERROR - Training failed: [Errno 2] No such file or directory: 'sample_data.csv'
+2025-06-10 17:03:08,869 - INFO - Starting medical disease classification system...
+2025-06-10 17:03:08,869 - INFO - Initialized classifier with device: cpu
+2025-06-10 17:03:08,870 - INFO - Available CPU cores: 8
+2025-06-10 17:03:08,879 - INFO - Available RAM: 7.24 GB
+2025-06-10 17:03:08,879 - INFO - Training with settings: {'epochs': 10, 'batch_size': 4, 'learning_rate': 1e-05, 'warmup_ratio': 0.1}
+2025-06-10 17:03:08,879 - INFO - Loading tokenizer...
+2025-06-10 17:03:10,113 - INFO - Loading dataset from 2.csv
+2025-06-10 17:03:10,169 - INFO - Loaded 15 samples from CSV
+2025-06-10 17:03:10,195 - INFO - After filtering: 15 valid samples
+2025-06-10 17:03:10,196 - INFO - Number of unique diseases: 5
+2025-06-10 17:03:10,201 - INFO - Disease distribution:
+diseases_name
+Dengue       3
+Asthma       3
+Migraine     3
+Pneumonia    3
+Typhoid      3
+Name: count, dtype: int64
+2025-06-10 17:03:10,203 - INFO - Class balance - Min: 3, Max: 3, Ratio: 1.00
+2025-06-10 17:03:10,204 - INFO - Creating data loaders with batch_size=4, num_workers=0
+2025-06-10 17:03:10,219 - ERROR - Training failed: The 'test_size' parameter of train_test_split must be a float in the range (0.0, 1.0), an int in the range [1, inf) or None. Got -0.025 instead.
+2025-06-10 17:04:10,203 - INFO - Starting medical disease classification system...
+2025-06-10 17:04:10,203 - INFO - Initialized classifier with device: cpu
+2025-06-10 17:04:10,203 - INFO - Available CPU cores: 8
+2025-06-10 17:04:10,210 - INFO - Available RAM: 7.24 GB
+2025-06-10 17:04:10,210 - INFO - Training with settings: {'epochs': 10, 'batch_size': 4, 'learning_rate': 1e-05, 'warmup_ratio': 0.1}
+2025-06-10 17:04:10,210 - INFO - Loading tokenizer...
+2025-06-10 17:04:12,529 - INFO - Loading dataset from 2.csv
+2025-06-10 17:04:12,533 - INFO - Loaded 15 samples from CSV
+2025-06-10 17:04:12,537 - INFO - After filtering: 15 valid samples
+2025-06-10 17:04:12,538 - INFO - Number of unique diseases: 5
+2025-06-10 17:04:12,539 - INFO - Disease distribution:
+diseases_name
+Dengue       3
+Asthma       3
+Migraine     3
+Pneumonia    3
+Typhoid      3
+Name: count, dtype: int64
+2025-06-10 17:04:12,541 - INFO - Class balance - Min: 3, Max: 3, Ratio: 1.00
+2025-06-10 17:04:12,541 - INFO - Creating data loaders with batch_size=4, num_workers=0
+2025-06-10 17:04:12,543 - ERROR - Training failed: The test_size = 3 should be greater or equal to the number of classes = 5
+2025-06-10 17:04:29,717 - INFO - Starting medical disease classification system...
+2025-06-10 17:04:29,717 - INFO - Initialized classifier with device: cpu
+2025-06-10 17:04:29,717 - INFO - Available CPU cores: 8
+2025-06-10 17:04:29,725 - INFO - Available RAM: 7.24 GB
+2025-06-10 17:04:29,726 - INFO - Training with settings: {'epochs': 10, 'batch_size': 4, 'learning_rate': 1e-05, 'warmup_ratio': 0.1}
+2025-06-10 17:04:29,726 - INFO - Loading tokenizer...
+2025-06-10 17:04:30,824 - INFO - Loading dataset from 2.csv
+2025-06-10 17:04:30,828 - INFO - Loaded 15 samples from CSV
+2025-06-10 17:04:30,835 - INFO - After filtering: 15 valid samples
+2025-06-10 17:04:30,836 - INFO - Number of unique diseases: 5
+2025-06-10 17:04:30,837 - INFO - Disease distribution:
+diseases_name
+Dengue       3
+Asthma       3
+Migraine     3
+Pneumonia    3
+Typhoid      3
+Name: count, dtype: int64
+2025-06-10 17:04:30,839 - INFO - Class balance - Min: 3, Max: 3, Ratio: 1.00
+2025-06-10 17:04:30,839 - INFO - Creating data loaders with batch_size=4, num_workers=0
+2025-06-10 17:04:30,841 - ERROR - Training failed: The test_size = 3 should be greater or equal to the number of classes = 5
+2025-06-10 17:09:19,523 - INFO - Starting medical disease classification system...
+2025-06-10 17:09:19,523 - INFO - Initialized classifier with device: cpu
+2025-06-10 17:09:19,524 - INFO - Available CPU cores: 8
+2025-06-10 17:09:19,531 - INFO - Available RAM: 7.24 GB
+2025-06-10 17:09:19,532 - INFO - Training with settings: {'epochs': 10, 'batch_size': 2, 'learning_rate': 5e-06, 'warmup_ratio': 0.1}
+2025-06-10 17:09:19,532 - INFO - Loading tokenizer...
+2025-06-10 17:09:21,297 - INFO - Loading dataset from 2.csv
+2025-06-10 17:09:21,301 - INFO - Loaded 15 samples from CSV
+2025-06-10 17:09:21,304 - INFO - After filtering: 15 valid samples
+2025-06-10 17:09:21,306 - INFO - Number of unique diseases: 5
+2025-06-10 17:09:21,309 - INFO - Disease distribution:
+diseases_name
+Dengue       3
+Asthma       3
+Migraine     3
+Pneumonia    3
+Typhoid      3
+Name: count, dtype: int64
+2025-06-10 17:09:21,311 - INFO - Class balance - Min: 3, Max: 3, Ratio: 1.00
+2025-06-10 17:09:21,312 - INFO - Creating data loaders with batch_size=2, num_workers=0
+2025-06-10 17:09:21,352 - WARNING - Very small dataset (15 samples). Using minimal splits.
+2025-06-10 17:09:21,354 - WARNING - Cannot use stratification due to small dataset size, using random splits
+2025-06-10 17:09:21,358 - INFO - Dataset splits - Train: 10, Val: 2, Test: 3
+2025-06-10 17:09:21,360 - INFO - Train distribution:
+diseases_name
+Migraine     3
+Typhoid      2
+Asthma       2
+Dengue       2
+Pneumonia    1
+Name: count, dtype: int64
+2025-06-10 17:09:21,362 - INFO - Val distribution:
+diseases_name
+Asthma     1
+Typhoid    1
+Name: count, dtype: int64
+2025-06-10 17:09:21,363 - INFO - Test distribution:
+diseases_name
+Pneumonia    2
+Dengue       1
+Name: count, dtype: int64
+2025-06-10 17:09:28,419 - INFO - Starting training for 10 epochs...
+2025-06-10 17:09:28,420 - INFO - Epoch 1/10
+2025-06-10 17:10:17,301 - INFO - Train Loss: 1.7255, Train Acc: 0.3000
+2025-06-10 17:10:17,307 - INFO - Val Loss: 2.0026, Val Acc: 0.0000, Val F1: 0.0000
+2025-06-10 17:10:17,308 - INFO - Epoch 2/10
+2025-06-10 17:11:04,098 - INFO - Train Loss: 1.6996, Train Acc: 0.2000
+2025-06-10 17:11:04,100 - INFO - Val Loss: 1.9398, Val Acc: 0.0000, Val F1: 0.0000
+2025-06-10 17:11:04,100 - INFO - Epoch 3/10
+2025-06-10 17:11:49,071 - INFO - Train Loss: 1.7445, Train Acc: 0.2000
+2025-06-10 17:11:49,072 - INFO - Val Loss: 1.9205, Val Acc: 0.0000, Val F1: 0.0000
+2025-06-10 17:11:49,072 - INFO - Epoch 4/10
+2025-06-10 17:12:33,856 - INFO - Train Loss: 1.6918, Train Acc: 0.3000
+2025-06-10 17:12:33,857 - INFO - Val Loss: 1.8947, Val Acc: 0.0000, Val F1: 0.0000
+2025-06-10 17:12:33,857 - INFO - Epoch 5/10
+2025-06-10 17:13:18,889 - INFO - Train Loss: 1.6421, Train Acc: 0.3000
+2025-06-10 17:13:18,890 - INFO - Val Loss: 1.8615, Val Acc: 0.0000, Val F1: 0.0000
+2025-06-10 17:13:18,926 - INFO - Early stopping triggered
+2025-06-10 17:13:18,929 - INFO - Loading model from best_medical_model.pt
+2025-06-10 17:13:19,670 - INFO - Loaded model with weights_only=False
+2025-06-10 17:13:24,391 - ERROR - Training failed: Error(s) in loading state_dict for AdvancedPubMedBERTClassifier:
+	Unexpected key(s) in state_dict: "batch_norm.weight", "batch_norm.bias", "batch_norm.running_mean", "batch_norm.running_var", "batch_norm.num_batches_tracked", "intermediate.weight", "intermediate.bias". 
+	size mismatch for classifier.weight: copying a param with shape torch.Size([5, 384]) from checkpoint, the shape in current model is torch.Size([5, 768]).
+2025-06-10 18:08:46,337 - INFO - Starting medical disease classification system...
+2025-06-10 18:08:46,338 - INFO - Initialized classifier with device: cpu
+2025-06-10 18:08:46,338 - INFO - Available CPU cores: 8
+2025-06-10 18:08:46,345 - INFO - Available RAM: 7.24 GB
+2025-06-10 18:08:46,345 - INFO - Training with settings: {'epochs': 10, 'batch_size': 2, 'learning_rate': 5e-06, 'warmup_ratio': 0.1}
+2025-06-10 18:08:46,346 - INFO - Loading tokenizer...
+2025-06-10 18:08:47,650 - INFO - Loading dataset from 2.csv
+2025-06-10 18:08:47,664 - INFO - Loaded 15 samples from CSV
+2025-06-10 18:08:47,683 - INFO - After filtering: 15 valid samples
+2025-06-10 18:08:47,686 - INFO - Number of unique diseases: 5
+2025-06-10 18:08:47,695 - INFO - Disease distribution:
+diseases_name
+Dengue       3
+Asthma       3
+Migraine     3
+Pneumonia    3
+Typhoid      3
+Name: count, dtype: int64
+2025-06-10 18:08:47,696 - INFO - Class balance - Min: 3, Max: 3, Ratio: 1.00
+2025-06-10 18:08:47,697 - INFO - Creating data loaders with batch_size=2, num_workers=0
+2025-06-10 18:08:47,699 - WARNING - Very small dataset (15 samples). Using minimal splits.
+2025-06-10 18:08:47,701 - WARNING - Cannot use stratification due to small dataset size, using random splits
+2025-06-10 18:08:47,708 - INFO - Dataset splits - Train: 10, Val: 2, Test: 3
+2025-06-10 18:08:47,710 - INFO - Train distribution:
+diseases_name
+Migraine     3
+Typhoid      2
+Asthma       2
+Dengue       2
+Pneumonia    1
+Name: count, dtype: int64
+2025-06-10 18:08:47,712 - INFO - Val distribution:
+diseases_name
+Asthma     1
+Typhoid    1
+Name: count, dtype: int64
+2025-06-10 18:08:47,713 - INFO - Test distribution:
+diseases_name
+Pneumonia    2
+Dengue       1
+Name: count, dtype: int64
+2025-06-10 18:08:54,008 - INFO - Starting training for 10 epochs...
+2025-06-10 18:08:54,008 - INFO - Epoch 1/10
+2025-06-10 18:09:43,461 - INFO - Train Loss: 1.7255, Train Acc: 0.3000
+2025-06-10 18:09:43,470 - INFO - Val Loss: 2.0026, Val Acc: 0.0000, Val F1: 0.0000
+2025-06-10 18:09:43,470 - INFO - Epoch 2/10
+2025-06-10 18:10:30,196 - INFO - Train Loss: 1.6996, Train Acc: 0.2000
+2025-06-10 18:10:30,199 - INFO - Val Loss: 1.9398, Val Acc: 0.0000, Val F1: 0.0000
+2025-06-10 18:10:30,199 - INFO - Epoch 3/10
+2025-06-10 18:11:14,768 - INFO - Train Loss: 1.7445, Train Acc: 0.2000
+2025-06-10 18:11:14,769 - INFO - Val Loss: 1.9205, Val Acc: 0.0000, Val F1: 0.0000
+2025-06-10 18:11:14,769 - INFO - Epoch 4/10
+2025-06-10 18:12:03,063 - INFO - Train Loss: 1.6918, Train Acc: 0.3000
+2025-06-10 18:12:03,064 - INFO - Val Loss: 1.8947, Val Acc: 0.0000, Val F1: 0.0000
+2025-06-10 18:12:03,065 - INFO - Epoch 5/10
+2025-06-10 18:12:54,005 - INFO - Train Loss: 1.6421, Train Acc: 0.3000
+2025-06-10 18:12:54,007 - INFO - Val Loss: 1.8615, Val Acc: 0.0000, Val F1: 0.0000
+2025-06-10 18:12:54,007 - INFO - Early stopping triggered
+2025-06-10 18:12:54,009 - INFO - Loading model from best_medical_model.pt
+2025-06-10 18:12:54,741 - INFO - Loaded model with weights_only=False
+2025-06-10 18:13:00,667 - ERROR - Training failed: Error(s) in loading state_dict for AdvancedPubMedBERTClassifier:
+	Unexpected key(s) in state_dict: "batch_norm.weight", "batch_norm.bias", "batch_norm.running_mean", "batch_norm.running_var", "batch_norm.num_batches_tracked", "intermediate.weight", "intermediate.bias". 
+	size mismatch for classifier.weight: copying a param with shape torch.Size([5, 384]) from checkpoint, the shape in current model is torch.Size([5, 768]).
+2025-06-10 18:22:19,398 - INFO - Starting medical disease classification system...
+2025-06-10 18:22:19,399 - INFO - Initialized classifier with device: cpu
+2025-06-10 18:22:19,399 - INFO - Available CPU cores: 8
+2025-06-10 18:22:19,406 - INFO - Available RAM: 7.24 GB
+2025-06-10 18:22:19,406 - INFO - Loading model from best_medical_model.pt
+2025-06-10 18:22:20,048 - INFO - Loaded model with weights_only=False
+2025-06-10 18:22:28,998 - INFO - Model loaded successfully!
+2025-06-10 18:22:30,114 - INFO - Initialized classifier with device: cpu
+2025-06-10 18:22:30,114 - INFO - Available CPU cores: 8
+2025-06-10 18:22:30,122 - INFO - Available RAM: 7.24 GB
+2025-06-10 18:22:30,122 - INFO - Loading model from best_medical_model.pt
+2025-06-10 18:22:30,751 - INFO - Loaded model with weights_only=False
+2025-06-10 18:22:34,992 - INFO - Model loaded successfully!
+2025-06-10 18:22:36,057 - INFO - System ready for production use!
+2025-06-14 10:26:43,462 - INFO - Starting medical disease classification system...
+2025-06-14 10:26:43,464 - INFO - Initialized classifier with device: cpu
+2025-06-14 10:26:43,464 - INFO - Available CPU cores: 8
+2025-06-14 10:26:43,475 - INFO - Available RAM: 7.24 GB
+2025-06-14 10:26:43,476 - INFO - Training with settings: {'epochs': 10, 'batch_size': 2, 'learning_rate': 5e-06, 'warmup_ratio': 0.1}
+2025-06-14 10:26:43,476 - INFO - Loading tokenizer...
+2025-06-14 10:26:44,267 - INFO - Loading dataset from 2.csv
+2025-06-14 10:26:44,290 - INFO - Loaded 15 samples from CSV
+2025-06-14 10:26:44,302 - INFO - After filtering: 15 valid samples
+2025-06-14 10:26:44,303 - INFO - Number of unique diseases: 5
+2025-06-14 10:26:44,307 - INFO - Disease distribution:
+diseases_name
+Dengue       3
+Asthma       3
+Migraine     3
+Pneumonia    3
+Typhoid      3
+Name: count, dtype: int64
+2025-06-14 10:26:44,309 - INFO - Class balance - Min: 3, Max: 3, Ratio: 1.00
+2025-06-14 10:26:44,310 - INFO - Creating data loaders with batch_size=2, num_workers=0
+2025-06-14 10:26:44,311 - WARNING - Very small dataset (15 samples). Using minimal splits.
+2025-06-14 10:26:44,312 - WARNING - Cannot use stratification due to small dataset size, using random splits
+2025-06-14 10:26:44,318 - INFO - Dataset splits - Train: 10, Val: 2, Test: 3
+2025-06-14 10:26:44,320 - INFO - Train distribution:
+diseases_name
+Migraine     3
+Typhoid      2
+Asthma       2
+Dengue       2
+Pneumonia    1
+Name: count, dtype: int64
+2025-06-14 10:26:44,321 - INFO - Val distribution:
+diseases_name
+Asthma     1
+Typhoid    1
+Name: count, dtype: int64
+2025-06-14 10:26:44,322 - INFO - Test distribution:
+diseases_name
+Pneumonia    2
+Dengue       1
+Name: count, dtype: int64
+2025-06-14 10:26:49,662 - INFO - Starting training for 10 epochs...
+2025-06-14 10:26:49,663 - INFO - Epoch 1/10
+2025-06-14 10:27:41,993 - INFO - Train Loss: 1.7255, Train Acc: 0.3000
+2025-06-14 10:27:41,999 - INFO - Val Loss: 2.0026, Val Acc: 0.0000, Val F1: 0.0000
+2025-06-14 10:27:42,000 - INFO - Epoch 2/10
+2025-06-14 10:28:31,143 - INFO - Train Loss: 1.6996, Train Acc: 0.2000
+2025-06-14 10:28:31,145 - INFO - Val Loss: 1.9398, Val Acc: 0.0000, Val F1: 0.0000
+2025-06-14 10:28:31,146 - INFO - Epoch 3/10
+2025-06-14 10:29:16,115 - INFO - Train Loss: 1.7445, Train Acc: 0.2000
+2025-06-14 10:29:16,117 - INFO - Val Loss: 1.9205, Val Acc: 0.0000, Val F1: 0.0000
+2025-06-14 10:29:16,117 - INFO - Epoch 4/10
+2025-06-14 10:30:21,160 - INFO - Train Loss: 1.6918, Train Acc: 0.3000
+2025-06-14 10:30:21,162 - INFO - Val Loss: 1.8947, Val Acc: 0.0000, Val F1: 0.0000
+2025-06-14 10:30:21,162 - INFO - Epoch 5/10
+2025-06-14 10:31:09,819 - INFO - Train Loss: 1.6421, Train Acc: 0.3000
+2025-06-14 10:31:09,821 - INFO - Val Loss: 1.8615, Val Acc: 0.0000, Val F1: 0.0000
+2025-06-14 10:31:09,822 - INFO - Early stopping triggered
+2025-06-14 10:31:09,824 - INFO - Loading model from best_medical_model.pt
+2025-06-14 10:31:10,376 - INFO - Loaded model with weights_only=False
+2025-06-14 10:31:13,962 - ERROR - Training failed: Error(s) in loading state_dict for AdvancedPubMedBERTClassifier:
+	Unexpected key(s) in state_dict: "batch_norm.weight", "batch_norm.bias", "batch_norm.running_mean", "batch_norm.running_var", "batch_norm.num_batches_tracked", "intermediate.weight", "intermediate.bias". 
+	size mismatch for classifier.weight: copying a param with shape torch.Size([5, 384]) from checkpoint, the shape in current model is torch.Size([5, 768]).
+2025-06-14 10:44:48,531 - INFO - Starting medical disease classification system...
+2025-06-14 10:44:48,532 - INFO - Initialized classifier with device: cpu
+2025-06-14 10:44:48,532 - INFO - Available CPU cores: 8
+2025-06-14 10:44:48,542 - INFO - Available RAM: 7.24 GB
+2025-06-14 10:44:48,542 - INFO - Training with settings: {'epochs': 10, 'batch_size': 2, 'learning_rate': 5e-06, 'warmup_ratio': 0.1}
+2025-06-14 10:44:48,542 - INFO - Loading tokenizer...
+2025-06-14 10:44:49,327 - INFO - Loading dataset from 2.csv
+2025-06-14 10:44:49,337 - INFO - Loaded 15 samples from CSV
+2025-06-14 10:44:49,349 - INFO - After filtering: 15 valid samples
+2025-06-14 10:44:49,350 - INFO - Number of unique diseases: 5
+2025-06-14 10:44:49,355 - INFO - Disease distribution:
+diseases_name
+Dengue       3
+Asthma       3
+Migraine     3
+Pneumonia    3
+Typhoid      3
+Name: count, dtype: int64
+2025-06-14 10:44:49,356 - INFO - Class balance - Min: 3, Max: 3, Ratio: 1.00
+2025-06-14 10:44:49,357 - INFO - Creating data loaders with batch_size=2, num_workers=0
+2025-06-14 10:44:49,358 - WARNING - Very small dataset (15 samples). Using minimal splits.
+2025-06-14 10:44:49,359 - WARNING - Cannot use stratification due to small dataset size, using random splits
+2025-06-14 10:44:49,366 - INFO - Dataset splits - Train: 10, Val: 2, Test: 3
+2025-06-14 10:44:49,368 - INFO - Train distribution:
+diseases_name
+Migraine     3
+Typhoid      2
+Asthma       2
+Dengue       2
+Pneumonia    1
+Name: count, dtype: int64
+2025-06-14 10:44:49,370 - INFO - Val distribution:
+diseases_name
+Asthma     1
+Typhoid    1
+Name: count, dtype: int64
+2025-06-14 10:44:49,371 - INFO - Test distribution:
+diseases_name
+Pneumonia    2
+Dengue       1
+Name: count, dtype: int64
+2025-06-14 10:44:54,315 - INFO - Starting training for 10 epochs...
+2025-06-14 10:44:54,315 - INFO - Epoch 1/10
+2025-06-14 10:45:16,031 - INFO - Train Loss: 1.7232, Train Acc: 0.3000
+2025-06-14 10:45:16,031 - INFO - Val Loss: 2.0234, Val Acc: 0.0000, Val F1: 0.0000
+2025-06-14 10:45:16,032 - INFO - Epoch 2/10
+2025-06-14 10:45:38,946 - INFO - Train Loss: 1.7098, Train Acc: 0.2000
+2025-06-14 10:45:38,946 - INFO - Val Loss: 2.0222, Val Acc: 0.0000, Val F1: 0.0000
+2025-06-14 10:45:38,946 - INFO - Epoch 3/10
+2025-06-14 10:46:01,634 - INFO - Train Loss: 1.7800, Train Acc: 0.2000
+2025-06-14 10:46:01,634 - INFO - Val Loss: 2.0215, Val Acc: 0.0000, Val F1: 0.0000
+2025-06-14 10:46:01,634 - INFO - Epoch 4/10
+2025-06-14 10:46:24,527 - INFO - Train Loss: 1.7319, Train Acc: 0.3000
+2025-06-14 10:46:24,527 - INFO - Val Loss: 2.0206, Val Acc: 0.0000, Val F1: 0.0000
+2025-06-14 10:46:24,527 - INFO - Epoch 5/10
+2025-06-14 10:46:47,825 - INFO - Train Loss: 1.7298, Train Acc: 0.3000
+2025-06-14 10:46:47,826 - INFO - Val Loss: 2.0198, Val Acc: 0.0000, Val F1: 0.0000
+2025-06-14 10:46:47,826 - INFO - Early stopping triggered
+2025-06-14 10:46:47,826 - INFO - Loading model from best_medical_model.pt
+2025-06-14 10:46:48,233 - INFO - Loaded checkpoint successfully
+2025-06-14 10:46:48,233 - WARNING - No model config found in checkpoint, using default config
+2025-06-14 10:46:51,820 - ERROR - Error loading model state: Error(s) in loading state_dict for AdvancedPubMedBERTClassifier:
+	Unexpected key(s) in state_dict: "batch_norm.weight", "batch_norm.bias", "batch_norm.running_mean", "batch_norm.running_var", "batch_norm.num_batches_tracked", "intermediate.weight", "intermediate.bias". 
+	size mismatch for classifier.weight: copying a param with shape torch.Size([5, 384]) from checkpoint, the shape in current model is torch.Size([5, 768]).
+2025-06-14 10:46:51,825 - INFO - Attempting to fix architecture mismatch...
+2025-06-14 10:46:51,828 - WARNING - Unexpected key in checkpoint: batch_norm.weight
+2025-06-14 10:46:51,829 - WARNING - Unexpected key in checkpoint: batch_norm.bias
+2025-06-14 10:46:51,829 - WARNING - Unexpected key in checkpoint: batch_norm.running_mean
+2025-06-14 10:46:51,829 - WARNING - Unexpected key in checkpoint: batch_norm.running_var
+2025-06-14 10:46:51,829 - WARNING - Unexpected key in checkpoint: batch_norm.num_batches_tracked
+2025-06-14 10:46:51,829 - WARNING - Unexpected key in checkpoint: intermediate.weight
+2025-06-14 10:46:51,829 - WARNING - Unexpected key in checkpoint: intermediate.bias
+2025-06-14 10:46:51,830 - WARNING - Shape mismatch for classifier.weight: saved torch.Size([5, 384]), expected torch.Size([5, 768])
+2025-06-14 10:46:51,915 - INFO - Model loaded with filtered state dict
+2025-06-14 10:46:51,921 - INFO - Model loaded successfully!
+2025-06-14 10:46:55,697 - INFO - Final Test Results - Accuracy: 0.6667, F1: 0.4000
+2025-06-14 10:46:55,700 - INFO - Training history saved to training_history.json
+2025-06-14 10:46:55,712 - INFO - Training completed successfully! Test Accuracy: 0.6667, Test F1: 0.4000
+2025-06-14 10:46:55,716 - INFO - Initialized classifier with device: cpu
+2025-06-14 10:46:55,717 - INFO - Available CPU cores: 8
+2025-06-14 10:46:55,734 - INFO - Available RAM: 7.24 GB
+2025-06-14 10:46:55,735 - INFO - Loading model from best_medical_model.pt
+2025-06-14 10:46:56,529 - INFO - Loaded checkpoint successfully
+2025-06-14 10:46:57,187 - WARNING - No model config found in checkpoint, using default config
+2025-06-14 10:46:59,489 - ERROR - Error loading model state: Error(s) in loading state_dict for AdvancedPubMedBERTClassifier:
+	Unexpected key(s) in state_dict: "batch_norm.weight", "batch_norm.bias", "batch_norm.running_mean", "batch_norm.running_var", "batch_norm.num_batches_tracked", "intermediate.weight", "intermediate.bias". 
+	size mismatch for classifier.weight: copying a param with shape torch.Size([5, 384]) from checkpoint, the shape in current model is torch.Size([5, 768]).
+2025-06-14 10:46:59,489 - INFO - Attempting to fix architecture mismatch...
+2025-06-14 10:46:59,492 - WARNING - Unexpected key in checkpoint: batch_norm.weight
+2025-06-14 10:46:59,492 - WARNING - Unexpected key in checkpoint: batch_norm.bias
+2025-06-14 10:46:59,492 - WARNING - Unexpected key in checkpoint: batch_norm.running_mean
+2025-06-14 10:46:59,492 - WARNING - Unexpected key in checkpoint: batch_norm.running_var
+2025-06-14 10:46:59,492 - WARNING - Unexpected key in checkpoint: batch_norm.num_batches_tracked
+2025-06-14 10:46:59,493 - WARNING - Unexpected key in checkpoint: intermediate.weight
+2025-06-14 10:46:59,493 - WARNING - Unexpected key in checkpoint: intermediate.bias
+2025-06-14 10:46:59,493 - WARNING - Shape mismatch for classifier.weight: saved torch.Size([5, 384]), expected torch.Size([5, 768])
+2025-06-14 10:46:59,574 - INFO - Model loaded with filtered state dict
+2025-06-14 10:46:59,580 - INFO - Model loaded successfully!
+2025-06-14 10:47:01,103 - INFO - Initialized classifier with device: cpu
+2025-06-14 10:47:01,104 - INFO - Available CPU cores: 8
+2025-06-14 10:47:01,118 - INFO - Available RAM: 7.24 GB
+2025-06-14 10:47:01,118 - INFO - Loading model from best_medical_model.pt
+2025-06-14 10:47:01,593 - INFO - Loaded checkpoint successfully
+2025-06-14 10:47:02,237 - WARNING - No model config found in checkpoint, using default config
+2025-06-14 10:47:04,215 - ERROR - Error loading model state: Error(s) in loading state_dict for AdvancedPubMedBERTClassifier:
+	Unexpected key(s) in state_dict: "batch_norm.weight", "batch_norm.bias", "batch_norm.running_mean", "batch_norm.running_var", "batch_norm.num_batches_tracked", "intermediate.weight", "intermediate.bias". 
+	size mismatch for classifier.weight: copying a param with shape torch.Size([5, 384]) from checkpoint, the shape in current model is torch.Size([5, 768]).
+2025-06-14 10:47:04,216 - INFO - Attempting to fix architecture mismatch...
+2025-06-14 10:47:04,218 - WARNING - Unexpected key in checkpoint: batch_norm.weight
+2025-06-14 10:47:04,218 - WARNING - Unexpected key in checkpoint: batch_norm.bias
+2025-06-14 10:47:04,219 - WARNING - Unexpected key in checkpoint: batch_norm.running_mean
+2025-06-14 10:47:04,219 - WARNING - Unexpected key in checkpoint: batch_norm.running_var
+2025-06-14 10:47:04,219 - WARNING - Unexpected key in checkpoint: batch_norm.num_batches_tracked
+2025-06-14 10:47:04,219 - WARNING - Unexpected key in checkpoint: intermediate.weight
+2025-06-14 10:47:04,219 - WARNING - Unexpected key in checkpoint: intermediate.bias
+2025-06-14 10:47:04,219 - WARNING - Shape mismatch for classifier.weight: saved torch.Size([5, 384]), expected torch.Size([5, 768])
+2025-06-14 10:47:04,289 - INFO - Model loaded with filtered state dict
+2025-06-14 10:47:04,293 - INFO - Model loaded successfully!
+2025-06-14 10:47:05,513 - INFO - Initialized classifier with device: cpu
+2025-06-14 10:47:05,513 - INFO - Available CPU cores: 8
+2025-06-14 10:47:05,528 - INFO - Available RAM: 7.24 GB
+2025-06-14 10:47:05,529 - INFO - Loading model from best_medical_model.pt
+2025-06-14 10:47:05,956 - INFO - Loaded checkpoint successfully
+2025-06-14 10:47:06,549 - WARNING - No model config found in checkpoint, using default config
+2025-06-14 10:47:08,496 - ERROR - Error loading model state: Error(s) in loading state_dict for AdvancedPubMedBERTClassifier:
+	Unexpected key(s) in state_dict: "batch_norm.weight", "batch_norm.bias", "batch_norm.running_mean", "batch_norm.running_var", "batch_norm.num_batches_tracked", "intermediate.weight", "intermediate.bias". 
+	size mismatch for classifier.weight: copying a param with shape torch.Size([5, 384]) from checkpoint, the shape in current model is torch.Size([5, 768]).
+2025-06-14 10:47:08,496 - INFO - Attempting to fix architecture mismatch...
+2025-06-14 10:47:08,498 - WARNING - Unexpected key in checkpoint: batch_norm.weight
+2025-06-14 10:47:08,498 - WARNING - Unexpected key in checkpoint: batch_norm.bias
+2025-06-14 10:47:08,498 - WARNING - Unexpected key in checkpoint: batch_norm.running_mean
+2025-06-14 10:47:08,499 - WARNING - Unexpected key in checkpoint: batch_norm.running_var
+2025-06-14 10:47:08,499 - WARNING - Unexpected key in checkpoint: batch_norm.num_batches_tracked
+2025-06-14 10:47:08,499 - WARNING - Unexpected key in checkpoint: intermediate.weight
+2025-06-14 10:47:08,499 - WARNING - Unexpected key in checkpoint: intermediate.bias
+2025-06-14 10:47:08,499 - WARNING - Shape mismatch for classifier.weight: saved torch.Size([5, 384]), expected torch.Size([5, 768])
+2025-06-14 10:47:08,573 - INFO - Model loaded with filtered state dict
+2025-06-14 10:47:08,576 - INFO - Model loaded successfully!
+2025-06-14 10:47:09,787 - INFO - Initialized classifier with device: cpu
+2025-06-14 10:47:09,787 - INFO - Available CPU cores: 8
+2025-06-14 10:47:09,799 - INFO - Available RAM: 7.24 GB
+2025-06-14 10:47:09,800 - INFO - Loading model from best_medical_model.pt
+2025-06-14 10:47:10,200 - INFO - Loaded checkpoint successfully
+2025-06-14 10:47:12,147 - WARNING - No model config found in checkpoint, using default config
+2025-06-14 10:47:13,975 - ERROR - Error loading model state: Error(s) in loading state_dict for AdvancedPubMedBERTClassifier:
+	Unexpected key(s) in state_dict: "batch_norm.weight", "batch_norm.bias", "batch_norm.running_mean", "batch_norm.running_var", "batch_norm.num_batches_tracked", "intermediate.weight", "intermediate.bias". 
+	size mismatch for classifier.weight: copying a param with shape torch.Size([5, 384]) from checkpoint, the shape in current model is torch.Size([5, 768]).
+2025-06-14 10:47:13,975 - INFO - Attempting to fix architecture mismatch...
+2025-06-14 10:47:13,977 - WARNING - Unexpected key in checkpoint: batch_norm.weight
+2025-06-14 10:47:13,978 - WARNING - Unexpected key in checkpoint: batch_norm.bias
+2025-06-14 10:47:13,978 - WARNING - Unexpected key in checkpoint: batch_norm.running_mean
+2025-06-14 10:47:13,978 - WARNING - Unexpected key in checkpoint: batch_norm.running_var
+2025-06-14 10:47:13,978 - WARNING - Unexpected key in checkpoint: batch_norm.num_batches_tracked
+2025-06-14 10:47:13,979 - WARNING - Unexpected key in checkpoint: intermediate.weight
+2025-06-14 10:47:13,979 - WARNING - Unexpected key in checkpoint: intermediate.bias
+2025-06-14 10:47:13,979 - WARNING - Shape mismatch for classifier.weight: saved torch.Size([5, 384]), expected torch.Size([5, 768])
+2025-06-14 10:47:14,051 - INFO - Model loaded with filtered state dict
+2025-06-14 10:47:14,054 - INFO - Model loaded successfully!
+2025-06-14 10:47:15,212 - INFO - Initialized classifier with device: cpu
+2025-06-14 10:47:15,213 - INFO - Available CPU cores: 8
+2025-06-14 10:47:15,225 - INFO - Available RAM: 7.24 GB
+2025-06-14 10:47:15,226 - INFO - Loading model from best_medical_model.pt
+2025-06-14 10:47:15,644 - INFO - Loaded checkpoint successfully
+2025-06-14 10:47:16,223 - WARNING - No model config found in checkpoint, using default config
+2025-06-14 10:47:18,207 - ERROR - Error loading model state: Error(s) in loading state_dict for AdvancedPubMedBERTClassifier:
+	Unexpected key(s) in state_dict: "batch_norm.weight", "batch_norm.bias", "batch_norm.running_mean", "batch_norm.running_var", "batch_norm.num_batches_tracked", "intermediate.weight", "intermediate.bias". 
+	size mismatch for classifier.weight: copying a param with shape torch.Size([5, 384]) from checkpoint, the shape in current model is torch.Size([5, 768]).
+2025-06-14 10:47:18,208 - INFO - Attempting to fix architecture mismatch...
+2025-06-14 10:47:18,209 - WARNING - Unexpected key in checkpoint: batch_norm.weight
+2025-06-14 10:47:18,210 - WARNING - Unexpected key in checkpoint: batch_norm.bias
+2025-06-14 10:47:18,210 - WARNING - Unexpected key in checkpoint: batch_norm.running_mean
+2025-06-14 10:47:18,210 - WARNING - Unexpected key in checkpoint: batch_norm.running_var
+2025-06-14 10:47:18,211 - WARNING - Unexpected key in checkpoint: batch_norm.num_batches_tracked
+2025-06-14 10:47:18,211 - WARNING - Unexpected key in checkpoint: intermediate.weight
+2025-06-14 10:47:18,211 - WARNING - Unexpected key in checkpoint: intermediate.bias
+2025-06-14 10:47:18,211 - WARNING - Shape mismatch for classifier.weight: saved torch.Size([5, 384]), expected torch.Size([5, 768])
+2025-06-14 10:47:18,287 - INFO - Model loaded with filtered state dict
+2025-06-14 10:47:18,290 - INFO - Model loaded successfully!
+2025-06-14 10:47:19,456 - INFO - System ready for production use!
+2025-06-14 10:52:16,771 - INFO - Starting medical disease classification system...
+2025-06-14 10:52:16,773 - INFO - Initialized classifier with device: cpu
+2025-06-14 10:52:16,773 - INFO - Available CPU cores: 8
+2025-06-14 10:52:16,782 - INFO - Available RAM: 7.24 GB
+2025-06-14 10:52:16,783 - INFO - Loading model from best_medical_model.pt
+2025-06-14 10:52:17,257 - INFO - Loaded checkpoint successfully
+2025-06-14 10:52:18,019 - WARNING - No model config found in checkpoint, using default config
+2025-06-14 10:52:23,769 - ERROR - Error loading model state: Error(s) in loading state_dict for AdvancedPubMedBERTClassifier:
+	Unexpected key(s) in state_dict: "batch_norm.weight", "batch_norm.bias", "batch_norm.running_mean", "batch_norm.running_var", "batch_norm.num_batches_tracked", "intermediate.weight", "intermediate.bias". 
+	size mismatch for classifier.weight: copying a param with shape torch.Size([5, 384]) from checkpoint, the shape in current model is torch.Size([5, 768]).
+2025-06-14 10:52:23,771 - INFO - Attempting to fix architecture mismatch...
+2025-06-14 10:52:23,774 - WARNING - Unexpected key in checkpoint: batch_norm.weight
+2025-06-14 10:52:23,774 - WARNING - Unexpected key in checkpoint: batch_norm.bias
+2025-06-14 10:52:23,774 - WARNING - Unexpected key in checkpoint: batch_norm.running_mean
+2025-06-14 10:52:23,774 - WARNING - Unexpected key in checkpoint: batch_norm.running_var
+2025-06-14 10:52:23,775 - WARNING - Unexpected key in checkpoint: batch_norm.num_batches_tracked
+2025-06-14 10:52:23,775 - WARNING - Unexpected key in checkpoint: intermediate.weight
+2025-06-14 10:52:23,775 - WARNING - Unexpected key in checkpoint: intermediate.bias
+2025-06-14 10:52:23,775 - WARNING - Shape mismatch for classifier.weight: saved torch.Size([5, 384]), expected torch.Size([5, 768])
+2025-06-14 10:52:23,873 - INFO - Model loaded with filtered state dict
+2025-06-14 10:52:23,879 - INFO - Model loaded successfully!
+2025-06-14 10:52:25,395 - INFO - System ready for production use!
+2025-06-14 10:54:16,232 - INFO - Starting medical disease classification system...
+2025-06-14 10:54:16,232 - INFO - Initialized classifier with device: cpu
+2025-06-14 10:54:16,232 - INFO - Available CPU cores: 8
+2025-06-14 10:54:16,241 - INFO - Available RAM: 7.24 GB
+2025-06-14 10:54:16,242 - INFO - Loading model from best_medical_model.pt
+2025-06-14 10:54:16,666 - INFO - Loaded checkpoint successfully
+2025-06-14 10:54:17,658 - WARNING - No model config found in checkpoint, using default config
+2025-06-14 10:54:23,670 - ERROR - Error loading model state: Error(s) in loading state_dict for AdvancedPubMedBERTClassifier:
+	Unexpected key(s) in state_dict: "batch_norm.weight", "batch_norm.bias", "batch_norm.running_mean", "batch_norm.running_var", "batch_norm.num_batches_tracked", "intermediate.weight", "intermediate.bias". 
+	size mismatch for classifier.weight: copying a param with shape torch.Size([5, 384]) from checkpoint, the shape in current model is torch.Size([5, 768]).
+2025-06-14 10:54:23,671 - INFO - Attempting to fix architecture mismatch...
+2025-06-14 10:54:23,673 - WARNING - Unexpected key in checkpoint: batch_norm.weight
+2025-06-14 10:54:23,673 - WARNING - Unexpected key in checkpoint: batch_norm.bias
+2025-06-14 10:54:23,673 - WARNING - Unexpected key in checkpoint: batch_norm.running_mean
+2025-06-14 10:54:23,673 - WARNING - Unexpected key in checkpoint: batch_norm.running_var
+2025-06-14 10:54:23,674 - WARNING - Unexpected key in checkpoint: batch_norm.num_batches_tracked
+2025-06-14 10:54:23,675 - WARNING - Unexpected key in checkpoint: intermediate.weight
+2025-06-14 10:54:23,675 - WARNING - Unexpected key in checkpoint: intermediate.bias
+2025-06-14 10:54:23,675 - WARNING - Shape mismatch for classifier.weight: saved torch.Size([5, 384]), expected torch.Size([5, 768])
+2025-06-14 10:54:23,761 - INFO - Model loaded with filtered state dict
+2025-06-14 10:54:23,766 - INFO - Model loaded successfully!
+2025-06-14 10:54:25,140 - INFO - System ready for production use!
+2025-06-14 10:58:19,915 - INFO - Starting medical disease classification system...
+2025-06-14 10:58:19,916 - INFO - Initialized classifier with device: cpu
+2025-06-14 10:58:19,916 - INFO - Available CPU cores: 8
+2025-06-14 10:58:19,924 - INFO - Available RAM: 7.24 GB
+2025-06-14 10:58:19,925 - INFO - Loading model from best_medical_model.pt
+2025-06-14 10:58:20,365 - INFO - Loaded checkpoint successfully
+2025-06-14 10:58:21,153 - WARNING - No model config found in checkpoint, using default config
+2025-06-14 10:58:26,556 - ERROR - Error loading model state: Error(s) in loading state_dict for AdvancedPubMedBERTClassifier:
+	Unexpected key(s) in state_dict: "batch_norm.weight", "batch_norm.bias", "batch_norm.running_mean", "batch_norm.running_var", "batch_norm.num_batches_tracked", "intermediate.weight", "intermediate.bias". 
+	size mismatch for classifier.weight: copying a param with shape torch.Size([5, 384]) from checkpoint, the shape in current model is torch.Size([5, 768]).
+2025-06-14 10:58:26,557 - INFO - Attempting to fix architecture mismatch...
+2025-06-14 10:58:26,559 - WARNING - Unexpected key in checkpoint: batch_norm.weight
+2025-06-14 10:58:26,559 - WARNING - Unexpected key in checkpoint: batch_norm.bias
+2025-06-14 10:58:26,559 - WARNING - Unexpected key in checkpoint: batch_norm.running_mean
+2025-06-14 10:58:26,559 - WARNING - Unexpected key in checkpoint: batch_norm.running_var
+2025-06-14 10:58:26,559 - WARNING - Unexpected key in checkpoint: batch_norm.num_batches_tracked
+2025-06-14 10:58:26,560 - WARNING - Unexpected key in checkpoint: intermediate.weight
+2025-06-14 10:58:26,560 - WARNING - Unexpected key in checkpoint: intermediate.bias
+2025-06-14 10:58:26,560 - WARNING - Shape mismatch for classifier.weight: saved torch.Size([5, 384]), expected torch.Size([5, 768])
+2025-06-14 10:58:26,635 - INFO - Model loaded with filtered state dict
+2025-06-14 10:58:26,639 - INFO - Model loaded successfully!
+2025-06-14 10:58:28,068 - INFO - Initialized classifier with device: cpu
+2025-06-14 10:58:28,069 - INFO - Available CPU cores: 8
+2025-06-14 10:58:28,081 - INFO - Available RAM: 7.24 GB
+2025-06-14 10:58:28,082 - INFO - Loading model from best_medical_model.pt
+2025-06-14 10:58:28,475 - INFO - Loaded checkpoint successfully
+2025-06-14 10:58:29,048 - WARNING - No model config found in checkpoint, using default config
+2025-06-14 10:58:30,887 - ERROR - Error loading model state: Error(s) in loading state_dict for AdvancedPubMedBERTClassifier:
+	Unexpected key(s) in state_dict: "batch_norm.weight", "batch_norm.bias", "batch_norm.running_mean", "batch_norm.running_var", "batch_norm.num_batches_tracked", "intermediate.weight", "intermediate.bias". 
+	size mismatch for classifier.weight: copying a param with shape torch.Size([5, 384]) from checkpoint, the shape in current model is torch.Size([5, 768]).
+2025-06-14 10:58:30,888 - INFO - Attempting to fix architecture mismatch...
+2025-06-14 10:58:30,890 - WARNING - Unexpected key in checkpoint: batch_norm.weight
+2025-06-14 10:58:30,890 - WARNING - Unexpected key in checkpoint: batch_norm.bias
+2025-06-14 10:58:30,890 - WARNING - Unexpected key in checkpoint: batch_norm.running_mean
+2025-06-14 10:58:30,890 - WARNING - Unexpected key in checkpoint: batch_norm.running_var
+2025-06-14 10:58:30,890 - WARNING - Unexpected key in checkpoint: batch_norm.num_batches_tracked
+2025-06-14 10:58:30,890 - WARNING - Unexpected key in checkpoint: intermediate.weight
+2025-06-14 10:58:30,891 - WARNING - Unexpected key in checkpoint: intermediate.bias
+2025-06-14 10:58:30,892 - WARNING - Shape mismatch for classifier.weight: saved torch.Size([5, 384]), expected torch.Size([5, 768])
+2025-06-14 10:58:30,961 - INFO - Model loaded with filtered state dict
+2025-06-14 10:58:30,964 - INFO - Model loaded successfully!
+2025-06-14 10:58:31,970 - INFO - System ready for production use!
+2025-06-14 11:03:24,242 - INFO - Starting medical disease classification system...
+2025-06-14 11:03:24,243 - INFO - Initialized classifier with device: cpu
+2025-06-14 11:03:24,243 - INFO - Available CPU cores: 8
+2025-06-14 11:03:24,251 - INFO - Available RAM: 7.24 GB
+2025-06-14 11:03:24,251 - INFO - Loading model from best_medical_model.pt
+2025-06-14 11:03:24,673 - INFO - Loaded checkpoint successfully
+2025-06-14 11:03:25,395 - WARNING - No model config found in checkpoint, using default config
+2025-06-14 11:03:30,418 - ERROR - Error loading model state: Error(s) in loading state_dict for AdvancedPubMedBERTClassifier:
+	Unexpected key(s) in state_dict: "batch_norm.weight", "batch_norm.bias", "batch_norm.running_mean", "batch_norm.running_var", "batch_norm.num_batches_tracked", "intermediate.weight", "intermediate.bias". 
+	size mismatch for classifier.weight: copying a param with shape torch.Size([5, 384]) from checkpoint, the shape in current model is torch.Size([5, 768]).
+2025-06-14 11:03:30,418 - INFO - Attempting to fix architecture mismatch...
+2025-06-14 11:03:30,420 - WARNING - Unexpected key in checkpoint: batch_norm.weight
+2025-06-14 11:03:30,420 - WARNING - Unexpected key in checkpoint: batch_norm.bias
+2025-06-14 11:03:30,420 - WARNING - Unexpected key in checkpoint: batch_norm.running_mean
+2025-06-14 11:03:30,420 - WARNING - Unexpected key in checkpoint: batch_norm.running_var
+2025-06-14 11:03:30,421 - WARNING - Unexpected key in checkpoint: batch_norm.num_batches_tracked
+2025-06-14 11:03:30,421 - WARNING - Unexpected key in checkpoint: intermediate.weight
+2025-06-14 11:03:30,421 - WARNING - Unexpected key in checkpoint: intermediate.bias
+2025-06-14 11:03:30,421 - WARNING - Shape mismatch for classifier.weight: saved torch.Size([5, 384]), expected torch.Size([5, 768])
+2025-06-14 11:03:30,506 - INFO - Model loaded with filtered state dict
+2025-06-14 11:03:30,510 - INFO - Model loaded successfully!
+2025-06-14 11:03:31,905 - INFO - Initialized classifier with device: cpu
+2025-06-14 11:03:31,905 - INFO - Available CPU cores: 8
+2025-06-14 11:03:31,916 - INFO - Available RAM: 7.24 GB
+2025-06-14 11:03:31,916 - INFO - Loading model from best_medical_model.pt
+2025-06-14 11:03:32,460 - INFO - Loaded checkpoint successfully
+2025-06-14 11:03:33,097 - WARNING - No model config found in checkpoint, using default config
+2025-06-14 11:03:35,161 - ERROR - Error loading model state: Error(s) in loading state_dict for AdvancedPubMedBERTClassifier:
+	Unexpected key(s) in state_dict: "batch_norm.weight", "batch_norm.bias", "batch_norm.running_mean", "batch_norm.running_var", "batch_norm.num_batches_tracked", "intermediate.weight", "intermediate.bias". 
+	size mismatch for classifier.weight: copying a param with shape torch.Size([5, 384]) from checkpoint, the shape in current model is torch.Size([5, 768]).
+2025-06-14 11:03:35,162 - INFO - Attempting to fix architecture mismatch...
+2025-06-14 11:03:35,164 - WARNING - Unexpected key in checkpoint: batch_norm.weight
+2025-06-14 11:03:35,165 - WARNING - Unexpected key in checkpoint: batch_norm.bias
+2025-06-14 11:03:35,165 - WARNING - Unexpected key in checkpoint: batch_norm.running_mean
+2025-06-14 11:03:35,165 - WARNING - Unexpected key in checkpoint: batch_norm.running_var
+2025-06-14 11:03:35,166 - WARNING - Unexpected key in checkpoint: batch_norm.num_batches_tracked
+2025-06-14 11:03:35,166 - WARNING - Unexpected key in checkpoint: intermediate.weight
+2025-06-14 11:03:35,166 - WARNING - Unexpected key in checkpoint: intermediate.bias
+2025-06-14 11:03:35,166 - WARNING - Shape mismatch for classifier.weight: saved torch.Size([5, 384]), expected torch.Size([5, 768])
+2025-06-14 11:03:35,261 - INFO - Model loaded with filtered state dict
+2025-06-14 11:03:35,268 - INFO - Model loaded successfully!
+2025-06-14 11:03:36,733 - INFO - Initialized classifier with device: cpu
+2025-06-14 11:03:36,734 - INFO - Available CPU cores: 8
+2025-06-14 11:03:36,754 - INFO - Available RAM: 7.24 GB
+2025-06-14 11:03:36,754 - INFO - Loading model from best_medical_model.pt
+2025-06-14 11:03:37,193 - INFO - Loaded checkpoint successfully
+2025-06-14 11:03:37,817 - WARNING - No model config found in checkpoint, using default config
+2025-06-14 11:03:39,848 - ERROR - Error loading model state: Error(s) in loading state_dict for AdvancedPubMedBERTClassifier:
+	Unexpected key(s) in state_dict: "batch_norm.weight", "batch_norm.bias", "batch_norm.running_mean", "batch_norm.running_var", "batch_norm.num_batches_tracked", "intermediate.weight", "intermediate.bias". 
+	size mismatch for classifier.weight: copying a param with shape torch.Size([5, 384]) from checkpoint, the shape in current model is torch.Size([5, 768]).
+2025-06-14 11:03:39,849 - INFO - Attempting to fix architecture mismatch...
+2025-06-14 11:03:39,851 - WARNING - Unexpected key in checkpoint: batch_norm.weight
+2025-06-14 11:03:39,851 - WARNING - Unexpected key in checkpoint: batch_norm.bias
+2025-06-14 11:03:39,852 - WARNING - Unexpected key in checkpoint: batch_norm.running_mean
+2025-06-14 11:03:39,852 - WARNING - Unexpected key in checkpoint: batch_norm.running_var
+2025-06-14 11:03:39,852 - WARNING - Unexpected key in checkpoint: batch_norm.num_batches_tracked
+2025-06-14 11:03:39,852 - WARNING - Unexpected key in checkpoint: intermediate.weight
+2025-06-14 11:03:39,852 - WARNING - Unexpected key in checkpoint: intermediate.bias
+2025-06-14 11:03:39,852 - WARNING - Shape mismatch for classifier.weight: saved torch.Size([5, 384]), expected torch.Size([5, 768])
+2025-06-14 11:03:39,928 - INFO - Model loaded with filtered state dict
+2025-06-14 11:03:39,933 - INFO - Model loaded successfully!
+2025-06-14 11:03:41,278 - INFO - Initialized classifier with device: cpu
+2025-06-14 11:03:41,278 - INFO - Available CPU cores: 8
+2025-06-14 11:03:41,292 - INFO - Available RAM: 7.24 GB
+2025-06-14 11:03:41,292 - INFO - Loading model from best_medical_model.pt
+2025-06-14 11:03:41,789 - INFO - Loaded checkpoint successfully
+2025-06-14 11:03:42,409 - WARNING - No model config found in checkpoint, using default config
+2025-06-14 11:03:44,374 - ERROR - Error loading model state: Error(s) in loading state_dict for AdvancedPubMedBERTClassifier:
+	Unexpected key(s) in state_dict: "batch_norm.weight", "batch_norm.bias", "batch_norm.running_mean", "batch_norm.running_var", "batch_norm.num_batches_tracked", "intermediate.weight", "intermediate.bias". 
+	size mismatch for classifier.weight: copying a param with shape torch.Size([5, 384]) from checkpoint, the shape in current model is torch.Size([5, 768]).
+2025-06-14 11:03:44,374 - INFO - Attempting to fix architecture mismatch...
+2025-06-14 11:03:44,376 - WARNING - Unexpected key in checkpoint: batch_norm.weight
+2025-06-14 11:03:44,376 - WARNING - Unexpected key in checkpoint: batch_norm.bias
+2025-06-14 11:03:44,376 - WARNING - Unexpected key in checkpoint: batch_norm.running_mean
+2025-06-14 11:03:44,377 - WARNING - Unexpected key in checkpoint: batch_norm.running_var
+2025-06-14 11:03:44,377 - WARNING - Unexpected key in checkpoint: batch_norm.num_batches_tracked
+2025-06-14 11:03:44,377 - WARNING - Unexpected key in checkpoint: intermediate.weight
+2025-06-14 11:03:44,377 - WARNING - Unexpected key in checkpoint: intermediate.bias
+2025-06-14 11:03:44,377 - WARNING - Shape mismatch for classifier.weight: saved torch.Size([5, 384]), expected torch.Size([5, 768])
+2025-06-14 11:03:44,455 - INFO - Model loaded with filtered state dict
+2025-06-14 11:03:44,458 - INFO - Model loaded successfully!
+2025-06-14 11:03:45,714 - INFO - System ready for production use!
+2025-06-14 11:13:26,912 - INFO - Starting medical disease classification system...
+2025-06-14 11:13:26,914 - INFO - Initialized classifier with device: cpu
+2025-06-14 11:13:26,914 - INFO - Available CPU cores: 8
+2025-06-14 11:13:26,929 - INFO - Available RAM: 7.24 GB
+2025-06-14 11:13:26,930 - INFO - Loading model from best_medical_model.pt
+2025-06-14 11:13:27,397 - INFO - Loaded checkpoint successfully
+2025-06-14 11:13:28,205 - WARNING - No model config found in checkpoint, using default config
+2025-06-14 11:13:35,370 - ERROR - Error loading model state: Error(s) in loading state_dict for AdvancedPubMedBERTClassifier:
+	Unexpected key(s) in state_dict: "batch_norm.weight", "batch_norm.bias", "batch_norm.running_mean", "batch_norm.running_var", "batch_norm.num_batches_tracked", "intermediate.weight", "intermediate.bias". 
+	size mismatch for classifier.weight: copying a param with shape torch.Size([5, 384]) from checkpoint, the shape in current model is torch.Size([5, 768]).
+2025-06-14 11:13:35,373 - INFO - Attempting to fix architecture mismatch...
+2025-06-14 11:13:35,376 - WARNING - Unexpected key in checkpoint: batch_norm.weight
+2025-06-14 11:13:35,376 - WARNING - Unexpected key in checkpoint: batch_norm.bias
+2025-06-14 11:13:35,377 - WARNING - Unexpected key in checkpoint: batch_norm.running_mean
+2025-06-14 11:13:35,377 - WARNING - Unexpected key in checkpoint: batch_norm.running_var
+2025-06-14 11:13:35,377 - WARNING - Unexpected key in checkpoint: batch_norm.num_batches_tracked
+2025-06-14 11:13:35,377 - WARNING - Unexpected key in checkpoint: intermediate.weight
+2025-06-14 11:13:35,378 - WARNING - Unexpected key in checkpoint: intermediate.bias
+2025-06-14 11:13:35,378 - WARNING - Shape mismatch for classifier.weight: saved torch.Size([5, 384]), expected torch.Size([5, 768])
+2025-06-14 11:13:35,477 - INFO - Model loaded with filtered state dict
+2025-06-14 11:13:35,483 - INFO - Model loaded successfully!
+2025-06-14 11:13:37,025 - INFO - Initialized classifier with device: cpu
+2025-06-14 11:13:37,027 - INFO - Available CPU cores: 8
+2025-06-14 11:13:37,060 - INFO - Available RAM: 7.24 GB
+2025-06-14 11:13:37,062 - INFO - Loading model from best_medical_model.pt
+2025-06-14 11:13:37,576 - INFO - Loaded checkpoint successfully
+2025-06-14 11:13:38,264 - WARNING - No model config found in checkpoint, using default config
+2025-06-14 11:13:40,352 - ERROR - Error loading model state: Error(s) in loading state_dict for AdvancedPubMedBERTClassifier:
+	Unexpected key(s) in state_dict: "batch_norm.weight", "batch_norm.bias", "batch_norm.running_mean", "batch_norm.running_var", "batch_norm.num_batches_tracked", "intermediate.weight", "intermediate.bias". 
+	size mismatch for classifier.weight: copying a param with shape torch.Size([5, 384]) from checkpoint, the shape in current model is torch.Size([5, 768]).
+2025-06-14 11:13:40,353 - INFO - Attempting to fix architecture mismatch...
+2025-06-14 11:13:40,354 - WARNING - Unexpected key in checkpoint: batch_norm.weight
+2025-06-14 11:13:40,355 - WARNING - Unexpected key in checkpoint: batch_norm.bias
+2025-06-14 11:13:40,355 - WARNING - Unexpected key in checkpoint: batch_norm.running_mean
+2025-06-14 11:13:40,355 - WARNING - Unexpected key in checkpoint: batch_norm.running_var
+2025-06-14 11:13:40,355 - WARNING - Unexpected key in checkpoint: batch_norm.num_batches_tracked
+2025-06-14 11:13:40,355 - WARNING - Unexpected key in checkpoint: intermediate.weight
+2025-06-14 11:13:40,356 - WARNING - Unexpected key in checkpoint: intermediate.bias
+2025-06-14 11:13:40,356 - WARNING - Shape mismatch for classifier.weight: saved torch.Size([5, 384]), expected torch.Size([5, 768])
+2025-06-14 11:13:40,437 - INFO - Model loaded with filtered state dict
+2025-06-14 11:13:40,440 - INFO - Model loaded successfully!
+2025-06-14 11:13:41,648 - INFO - Initialized classifier with device: cpu
+2025-06-14 11:13:41,648 - INFO - Available CPU cores: 8
+2025-06-14 11:13:41,661 - INFO - Available RAM: 7.24 GB
+2025-06-14 11:13:41,662 - INFO - Loading model from best_medical_model.pt
+2025-06-14 11:13:42,083 - INFO - Loaded checkpoint successfully
+2025-06-14 11:13:42,659 - WARNING - No model config found in checkpoint, using default config
+2025-06-14 11:13:44,570 - ERROR - Error loading model state: Error(s) in loading state_dict for AdvancedPubMedBERTClassifier:
+	Unexpected key(s) in state_dict: "batch_norm.weight", "batch_norm.bias", "batch_norm.running_mean", "batch_norm.running_var", "batch_norm.num_batches_tracked", "intermediate.weight", "intermediate.bias". 
+	size mismatch for classifier.weight: copying a param with shape torch.Size([5, 384]) from checkpoint, the shape in current model is torch.Size([5, 768]).
+2025-06-14 11:13:44,570 - INFO - Attempting to fix architecture mismatch...
+2025-06-14 11:13:44,572 - WARNING - Unexpected key in checkpoint: batch_norm.weight
+2025-06-14 11:13:44,572 - WARNING - Unexpected key in checkpoint: batch_norm.bias
+2025-06-14 11:13:44,572 - WARNING - Unexpected key in checkpoint: batch_norm.running_mean
+2025-06-14 11:13:44,572 - WARNING - Unexpected key in checkpoint: batch_norm.running_var
+2025-06-14 11:13:44,572 - WARNING - Unexpected key in checkpoint: batch_norm.num_batches_tracked
+2025-06-14 11:13:44,573 - WARNING - Unexpected key in checkpoint: intermediate.weight
+2025-06-14 11:13:44,573 - WARNING - Unexpected key in checkpoint: intermediate.bias
+2025-06-14 11:13:44,573 - WARNING - Shape mismatch for classifier.weight: saved torch.Size([5, 384]), expected torch.Size([5, 768])
+2025-06-14 11:13:44,646 - INFO - Model loaded with filtered state dict
+2025-06-14 11:13:44,650 - INFO - Model loaded successfully!
+2025-06-14 11:13:45,857 - INFO - Initialized classifier with device: cpu
+2025-06-14 11:13:45,857 - INFO - Available CPU cores: 8
+2025-06-14 11:13:45,869 - INFO - Available RAM: 7.24 GB
+2025-06-14 11:13:45,870 - INFO - Loading model from best_medical_model.pt
+2025-06-14 11:13:46,299 - INFO - Loaded checkpoint successfully
+2025-06-14 11:13:46,901 - WARNING - No model config found in checkpoint, using default config
+2025-06-14 11:13:49,439 - ERROR - Error loading model state: Error(s) in loading state_dict for AdvancedPubMedBERTClassifier:
+	Unexpected key(s) in state_dict: "batch_norm.weight", "batch_norm.bias", "batch_norm.running_mean", "batch_norm.running_var", "batch_norm.num_batches_tracked", "intermediate.weight", "intermediate.bias". 
+	size mismatch for classifier.weight: copying a param with shape torch.Size([5, 384]) from checkpoint, the shape in current model is torch.Size([5, 768]).
+2025-06-14 11:13:49,440 - INFO - Attempting to fix architecture mismatch...
+2025-06-14 11:13:49,442 - WARNING - Unexpected key in checkpoint: batch_norm.weight
+2025-06-14 11:13:49,442 - WARNING - Unexpected key in checkpoint: batch_norm.bias
+2025-06-14 11:13:49,442 - WARNING - Unexpected key in checkpoint: batch_norm.running_mean
+2025-06-14 11:13:49,442 - WARNING - Unexpected key in checkpoint: batch_norm.running_var
+2025-06-14 11:13:49,443 - WARNING - Unexpected key in checkpoint: batch_norm.num_batches_tracked
+2025-06-14 11:13:49,443 - WARNING - Unexpected key in checkpoint: intermediate.weight
+2025-06-14 11:13:49,443 - WARNING - Unexpected key in checkpoint: intermediate.bias
+2025-06-14 11:13:49,443 - WARNING - Shape mismatch for classifier.weight: saved torch.Size([5, 384]), expected torch.Size([5, 768])
+2025-06-14 11:13:49,530 - INFO - Model loaded with filtered state dict
+2025-06-14 11:13:49,550 - INFO - Model loaded successfully!
+2025-06-14 11:13:50,846 - INFO - System ready for production use!
+2025-06-14 11:35:15,279 - INFO - Starting medical disease classification system...
+2025-06-14 11:35:15,281 - INFO - Initialized classifier with device: cpu
+2025-06-14 11:35:15,281 - INFO - Available CPU cores: 8
+2025-06-14 11:35:15,290 - INFO - Available RAM: 7.24 GB
+2025-06-14 11:35:15,290 - INFO - Loading model from best_medical_model.pt
+2025-06-14 11:35:15,817 - INFO - Loaded checkpoint successfully
+2025-06-14 11:35:16,633 - INFO - Inferred hidden size from checkpoint: 384
+2025-06-14 11:35:16,634 - WARNING - No model config found, created config: {'n_classes': 5, 'dropout_rate': 0.3, 'hidden_size': 384, 'model_version': 'legacy'}
+2025-06-14 11:35:22,093 - WARNING - Strict loading failed: Error(s) in loading state_dict for AdvancedPubMedBERTClassifier:
+	Unexpected key(s) in state_dict: "batch_norm.weight", "batch_norm.bias", "batch_norm.running_mean", "batch_norm.running_var", "batch_norm.num_batches_tracked", "intermediate.weight", "intermediate.bias". 
+	size mismatch for classifier.weight: copying a param with shape torch.Size([5, 384]) from checkpoint, the shape in current model is torch.Size([5, 768]).
+2025-06-14 11:35:22,095 - INFO - Attempting flexible loading...
+2025-06-14 11:35:22,098 - WARNING - Unexpected key in checkpoint: batch_norm.weight
+2025-06-14 11:35:22,098 - WARNING - Unexpected key in checkpoint: batch_norm.bias
+2025-06-14 11:35:22,098 - WARNING - Unexpected key in checkpoint: batch_norm.running_mean
+2025-06-14 11:35:22,098 - WARNING - Unexpected key in checkpoint: batch_norm.running_var
+2025-06-14 11:35:22,099 - WARNING - Unexpected key in checkpoint: batch_norm.num_batches_tracked
+2025-06-14 11:35:22,099 - WARNING - Unexpected key in checkpoint: intermediate.weight
+2025-06-14 11:35:22,099 - WARNING - Unexpected key in checkpoint: intermediate.bias
+2025-06-14 11:35:22,099 - WARNING - Shape mismatch for classifier.weight: saved torch.Size([5, 384]), expected torch.Size([5, 768])
+2025-06-14 11:35:22,099 - WARNING - Missing keys (will use random initialization): {'classifier.weight'}
+2025-06-14 11:35:22,180 - INFO - Model loaded with flexible loading
+2025-06-14 11:35:22,192 - INFO - Model loaded successfully!
+2025-06-14 11:35:23,344 - INFO - Initialized classifier with device: cpu
+2025-06-14 11:35:23,345 - INFO - Available CPU cores: 8
+2025-06-14 11:35:23,358 - INFO - Available RAM: 7.24 GB
+2025-06-14 11:35:23,359 - INFO - Loading model from best_medical_model.pt
+2025-06-14 11:35:23,841 - INFO - Loaded checkpoint successfully
+2025-06-14 11:35:24,652 - INFO - Inferred hidden size from checkpoint: 384
+2025-06-14 11:35:24,653 - WARNING - No model config found, created config: {'n_classes': 5, 'dropout_rate': 0.3, 'hidden_size': 384, 'model_version': 'legacy'}
+2025-06-14 11:35:26,501 - WARNING - Strict loading failed: Error(s) in loading state_dict for AdvancedPubMedBERTClassifier:
+	Unexpected key(s) in state_dict: "batch_norm.weight", "batch_norm.bias", "batch_norm.running_mean", "batch_norm.running_var", "batch_norm.num_batches_tracked", "intermediate.weight", "intermediate.bias". 
+	size mismatch for classifier.weight: copying a param with shape torch.Size([5, 384]) from checkpoint, the shape in current model is torch.Size([5, 768]).
+2025-06-14 11:35:26,501 - INFO - Attempting flexible loading...
+2025-06-14 11:35:26,503 - WARNING - Unexpected key in checkpoint: batch_norm.weight
+2025-06-14 11:35:26,504 - WARNING - Unexpected key in checkpoint: batch_norm.bias
+2025-06-14 11:35:26,504 - WARNING - Unexpected key in checkpoint: batch_norm.running_mean
+2025-06-14 11:35:26,504 - WARNING - Unexpected key in checkpoint: batch_norm.running_var
+2025-06-14 11:35:26,504 - WARNING - Unexpected key in checkpoint: batch_norm.num_batches_tracked
+2025-06-14 11:35:26,504 - WARNING - Unexpected key in checkpoint: intermediate.weight
+2025-06-14 11:35:26,505 - WARNING - Unexpected key in checkpoint: intermediate.bias
+2025-06-14 11:35:26,505 - WARNING - Shape mismatch for classifier.weight: saved torch.Size([5, 384]), expected torch.Size([5, 768])
+2025-06-14 11:35:26,505 - WARNING - Missing keys (will use random initialization): {'classifier.weight'}
+2025-06-14 11:35:26,577 - INFO - Model loaded with flexible loading
+2025-06-14 11:35:26,581 - INFO - Model loaded successfully!
+2025-06-14 11:35:27,640 - INFO - Initialized classifier with device: cpu
+2025-06-14 11:35:27,640 - INFO - Available CPU cores: 8
+2025-06-14 11:35:27,651 - INFO - Available RAM: 7.24 GB
+2025-06-14 11:35:27,652 - INFO - Loading model from best_medical_model.pt
+2025-06-14 11:35:28,136 - INFO - Loaded checkpoint successfully
+2025-06-14 11:35:28,701 - INFO - Inferred hidden size from checkpoint: 384
+2025-06-14 11:35:28,701 - WARNING - No model config found, created config: {'n_classes': 5, 'dropout_rate': 0.3, 'hidden_size': 384, 'model_version': 'legacy'}
+2025-06-14 11:35:30,453 - WARNING - Strict loading failed: Error(s) in loading state_dict for AdvancedPubMedBERTClassifier:
+	Unexpected key(s) in state_dict: "batch_norm.weight", "batch_norm.bias", "batch_norm.running_mean", "batch_norm.running_var", "batch_norm.num_batches_tracked", "intermediate.weight", "intermediate.bias". 
+	size mismatch for classifier.weight: copying a param with shape torch.Size([5, 384]) from checkpoint, the shape in current model is torch.Size([5, 768]).
+2025-06-14 11:35:30,453 - INFO - Attempting flexible loading...
+2025-06-14 11:35:30,455 - WARNING - Unexpected key in checkpoint: batch_norm.weight
+2025-06-14 11:35:30,455 - WARNING - Unexpected key in checkpoint: batch_norm.bias
+2025-06-14 11:35:30,455 - WARNING - Unexpected key in checkpoint: batch_norm.running_mean
+2025-06-14 11:35:30,456 - WARNING - Unexpected key in checkpoint: batch_norm.running_var
+2025-06-14 11:35:30,457 - WARNING - Unexpected key in checkpoint: batch_norm.num_batches_tracked
+2025-06-14 11:35:30,457 - WARNING - Unexpected key in checkpoint: intermediate.weight
+2025-06-14 11:35:30,457 - WARNING - Unexpected key in checkpoint: intermediate.bias
+2025-06-14 11:35:30,457 - WARNING - Shape mismatch for classifier.weight: saved torch.Size([5, 384]), expected torch.Size([5, 768])
+2025-06-14 11:35:30,457 - WARNING - Missing keys (will use random initialization): {'classifier.weight'}
+2025-06-14 11:35:30,529 - INFO - Model loaded with flexible loading
+2025-06-14 11:35:30,532 - INFO - Model loaded successfully!
+2025-06-14 11:35:31,519 - INFO - Initialized classifier with device: cpu
+2025-06-14 11:35:31,519 - INFO - Available CPU cores: 8
+2025-06-14 11:35:31,529 - INFO - Available RAM: 7.24 GB
+2025-06-14 11:35:31,530 - INFO - Loading model from best_medical_model.pt
+2025-06-14 11:35:31,917 - INFO - Loaded checkpoint successfully
+2025-06-14 11:35:32,481 - INFO - Inferred hidden size from checkpoint: 384
+2025-06-14 11:35:32,481 - WARNING - No model config found, created config: {'n_classes': 5, 'dropout_rate': 0.3, 'hidden_size': 384, 'model_version': 'legacy'}
+2025-06-14 11:35:34,300 - WARNING - Strict loading failed: Error(s) in loading state_dict for AdvancedPubMedBERTClassifier:
+	Unexpected key(s) in state_dict: "batch_norm.weight", "batch_norm.bias", "batch_norm.running_mean", "batch_norm.running_var", "batch_norm.num_batches_tracked", "intermediate.weight", "intermediate.bias". 
+	size mismatch for classifier.weight: copying a param with shape torch.Size([5, 384]) from checkpoint, the shape in current model is torch.Size([5, 768]).
+2025-06-14 11:35:34,300 - INFO - Attempting flexible loading...
+2025-06-14 11:35:34,302 - WARNING - Unexpected key in checkpoint: batch_norm.weight
+2025-06-14 11:35:34,302 - WARNING - Unexpected key in checkpoint: batch_norm.bias
+2025-06-14 11:35:34,303 - WARNING - Unexpected key in checkpoint: batch_norm.running_mean
+2025-06-14 11:35:34,303 - WARNING - Unexpected key in checkpoint: batch_norm.running_var
+2025-06-14 11:35:34,303 - WARNING - Unexpected key in checkpoint: batch_norm.num_batches_tracked
+2025-06-14 11:35:34,303 - WARNING - Unexpected key in checkpoint: intermediate.weight
+2025-06-14 11:35:34,303 - WARNING - Unexpected key in checkpoint: intermediate.bias
+2025-06-14 11:35:34,303 - WARNING - Shape mismatch for classifier.weight: saved torch.Size([5, 384]), expected torch.Size([5, 768])
+2025-06-14 11:35:34,303 - WARNING - Missing keys (will use random initialization): {'classifier.weight'}
+2025-06-14 11:35:34,378 - INFO - Model loaded with flexible loading
+2025-06-14 11:35:34,381 - INFO - Model loaded successfully!
+2025-06-14 11:35:35,390 - INFO - System ready for production use!

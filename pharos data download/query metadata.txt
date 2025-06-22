@@ -1,0 +1,70 @@
+User: not logged in
+3/4/2025 6:57:24 PM
+TCRD Version: 6.13.5
+Pharos Version: 3.19.1
+URL: https://pharos.nih.gov/diseases
+
+Selected Fields for Download:
+  Associated Disease - Diseases found to be associated with targets in the list, based on a documented indication in data from any source.
+  Disease Ontology Description - A description of the disease from Disease Ontology
+  UniProt Description - A description of the disease from UniProt
+  Protein Count - Count of proteins associated with the disease, or child diseases
+  Direct Association Count - Count of proteins documented to be directly associated with the disease, not a child disease
+  Mondo ID - Mondo Identifier
+  GARD Rare - Annotation from GARD as to whether the disease meets the criteria to be considered a rare disease.
+  Symbol - The approved gene symbol
+  UniProt - The UniProt ID for this protein
+  Disease Data Source - The data source of the association between disease and target.
+  JensenLab TextMining zscore - 
+  JensenLab Confidence - Metric for the confidence in the disease association, as mined and calculated by <a href="https://diseases.jensenlab.org/Search" target="_blank">DISEASES</a>.
+  Expression Atlas Log2 Fold Change - Quantified value for the change in expression level of targets in the list in the disease state, as reported by <a href="https://www.ebi.ac.uk/gxa/" target="_blank">Expression Atlas</a>.
+  DisGeNET Score - Metric to quantify the disease association, accounting for number of data sources, level of curation, number of publications, etc., as calculated by <a href="https://www.disgenet.org/home/" target="_blank">DisGeNET</a>.
+  Associated Disease Evidence - A note from the data source regarding the evidence behind the association between disease and target.
+  Associated Disease Drug Name - Based on data from DrugCentral, these are the names of drugs whose indication has yielded this association between disease and target.
+  Associated Disease P-value - The significance of the association between disease and target based on the Expression Atlas log2foldchange.
+  Associated Disease Source - A note from DisGeNET or eRAM regarding the dataset which supplied the data.
+  Associated Disease Source ID - The disease ID used by the data source for this disease association
+  Monarch S2O - A measure from Monarch quantifying the association betweeen disease and target.
+
+WARNING: Your results have been truncated to 250000 rows. You should probably filter your disease list a bit more judiciously, or use an analysis procedure that is more amenable to large datasets.
+
+
+
+How to cite Pharos:
+  Kelleher, K., Sheils, T. et al, "Pharos 2023: an integrated resource for the understudied human proteome", Nucl. Acids Res., 2023.
+  DOI: https://doi.org/10.1093/nar/gkac1033
+
+Data accessed from Pharos and TCRD is publicly available from the primary data sources listed on https://pharos.nih.gov/about. Please respect their individual licenses regarding proper use, redistribution, and citations.
+
+SQL Query:
+SELECT
+  ncats_disease.id AS `id`,
+  ncats_disease.name AS `Associated Disease`,
+  ncats_disease.do_description AS `Disease Ontology Description`,
+  ncats_disease.uniprot_description AS `UniProt Description`,
+  ncats_disease.target_count AS `Protein Count`,
+  ncats_disease.direct_target_count AS `Direct Association Count`,
+  ncats_disease.mondoid AS `Mondo ID`,
+  ncats_disease.gard_rare AS `GARD Rare`,
+  protein.sym AS `Symbol`,
+  protein.uniprot AS `UniProt`,
+  disease.dtype AS `Disease Data Source`,
+  disease.zscore AS `JensenLab TextMining zscore`,
+  disease.conf AS `JensenLab Confidence`,
+  disease.log2foldchange AS `Expression Atlas Log2 Fold Change`,
+  disease.score AS `DisGeNET Score`,
+  disease.evidence AS `Associated Disease Evidence`,
+  disease.drug_name AS `Associated Disease Drug Name`,
+  disease.pvalue AS `Associated Disease P-value`,
+  disease.source AS `Associated Disease Source`,
+  disease.did AS `Associated Disease Source ID`,
+  disease.S2O AS `Monarch S2O`
+FROM
+  `ncats_disease`
+  LEFT JOIN `ncats_d2da` ON `ncats_disease`.`id` = `ncats_d2da`.`ncats_disease_id`
+  LEFT JOIN `disease` ON `ncats_d2da`.`disease_assoc_id` = `disease`.`id`
+  LEFT JOIN `protein` AS `protein` ON `disease`.`protein_id` = `protein`.`id`
+ORDER BY
+  `id` ASC
+LIMIT
+  250000
